@@ -1,70 +1,407 @@
 {
-    "databases": {
+  "databases": {
+    "smileys": {
+      "title": "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen",
+      "description_html": "<p>Einzelmessungen der Smiley-Geschwindigkeitsanzeigen der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung). Die Smiley-Geschwindigkeitsanzeigen sind nicht geeicht und entsprechend können die Werte von der tatsächlich gefahrenen Geschwindigkeit abweichen. Hinweis: Die Messungen sind nicht repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p><p>Die Geschwindigkeitsmessungen durchlaufen vier Phasen: <b>Vormessung</b>, <b>Betrieb</b>, <b>Nachmessung</b> und <b>nach Ende</b>. In der Vormessungsphase wird die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen gemessen, wobei die Anzeigen nicht aktiviert sind. In der Betriebsphase ind die Smiley-Geschwindigkeitsanzeigen hingegen eingeschaltet. Nachfolgend werden die Anzeigen ausgeschaltet und die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen wird erneut gemessen. Die letzte Phase 'nach Ende' sind Messungen, die ausserhalb des im Projekt definierten Zeitraums vorfallen.</p>",
+      "license": "CC BY 3.0 CH",
+      "license_url": "https://creativecommons.org/licenses/by-nc/3.0/ch/",
+      "tables": {
         "smileys": {
-            "title": "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen",
-            "description_html": "<p>Einzelmessungen der Smiley-Geschwindigkeitsanzeigen der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung). Die Smiley-Geschwindigkeitsanzeigen sind nicht geeicht und entsprechend können die Werte von der tatsächlich gefahrenen Geschwindigkeit abweichen. Hinweis: Die Messungen sind nicht repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p><p>Die Geschwindigkeitsmessungen durchlaufen vier Phasen: <b>Vormessung</b>, <b>Betrieb</b>, <b>Nachmessung</b> und <b>nach Ende</b>. In der Vormessungsphase wird die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen gemessen, wobei die Anzeigen nicht aktiviert sind. In der Betriebsphase ind die Smiley-Geschwindigkeitsanzeigen hingegen eingeschaltet. Nachfolgend werden die Anzeigen ausgeschaltet und die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen wird erneut gemessen. Die letzte Phase 'nach Ende' sind Messungen, die ausserhalb des im Projekt definierten Zeitraums vorfallen.</p>",
-            "license": "CC BY 3.0 CH",
-            "license_url": "https://creativecommons.org/licenses/by-nc/3.0/ch/",
-            "tables": {
-                "smileys": {
-                    "sort_desc": "Timestamp",
-                    "columns": {
-                        "Timestamp": "Zeitpunkt der Messung"
-                    }
-                }
-            }
-        },
-        "geschwindigkeitsmonitoring_data": {
-            "title": "Geschwindikeits-Monitoring",
-            "description_html": "<p></p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitorings der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Daten handelt es sich ausschliesslich um statistische Erhebungen. Diese stehen nicht in einem Zusammenhang mit Ordnungsbussen oder einer strafrechtlichen Verfolgung. Die statistischen Geschwindigkeitsmessungen dienen der Kantonspolizei Basel-Stadt zur Überprüfung der Geschwindigkeit sowie der Verkehrssicherheit (z.B. Sicherheit an Fussgängerstreifen) an der betreffenden Örtlichkeit. Die Ergebnisse dienen zur Entscheidung, an welchen Örtlichkeiten Handlungsbedarf in Form von Geschwindigkeitskontrollen besteht. Jedes Statistikgerät besitzt eine einzige Punktgeometrie und ist meist mit zwei Richtungen versehen (Richtung 1 und 2).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Messungen sind nicht zwingend repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitoring sind folgende Datensätze vorhanden:</p><ul><li>Einzelmessungen ab 2023 (dieser Datensatz):&nbsp;<a href=\"https://example.com\">Link zu den Daten</a></li></ul>",
-            "license": "CC BY 3.0 CH",
-            "license_url": "https://creativecommons.org/licenses/by-nc/3.0/ch/",
-            "source": "Kantonspolizei",
-            "source_url": "https://www.polizei.bs.ch/",
-            "tables": {
-                "geschwindigkeitsmonitoring_data": {
-                    "sort_desc": "Timestamp",
-                    "columns": {
-                        "Geschwindigkeit": "Geschwindigkeit in km/h",
-                        "Zeit": "Uhrzeit (hh:mm:ss) einer gemessenen Fahrt"
-                    },
-                    "facets": ["Richtung ID", "Geschwindigkeit"]
-                }
-            }
-        },
-        "Velo_Fuss_Count": {
-            "title": "Verkehrszähldaten Velos und Fussgänger",
-            "description_html": "<p>Resultate der Messungen der&nbsp;Dauerzählstellen und Kurzzeitzählstellen für den Velo- und Fussgängerverkehr.&nbsp;</p><p>Die Zähldaten für den Fussgängerverkehr werden monatlich durch Anwendung einer Korrekturfunktion angepasst und im Anschluss veröffentlicht. Ausnahme bildet hier die Zählstelle 817 Elisabethenanlage. Diese wird auf Grund der aktuellen COVID-19 Krise täglich aufgearbeitet und beobachtet </p><p>Aus Kostengründen sind nur die Werte des aktuellen und des letzten Jahres als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar. Die vollständigen Daten ab dem Jahr 2000 können hier heruntergeladen werden: </p><ul><li><a href=\"https://data-bs.ch/mobilitaet/converted_Velo_Fuss_Count.csv\">Leicht aufbereiteter Datensatz: https://data-bs.ch/mobilitaet/converted_Velo_Fuss_Count.csv</a> </li><li><a href=\"https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv\">Rohdaten: https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv</a></li></ul><p>Die Daten einzelner Jahre ab dem Jahr 2000 können einzeln heruntergeladen werden unter der URL mit dem Muster https://data-bs.ch/mobilitaet/[JAHR]_Velo_Fuss_Count.csv, also zum Beispiel für das Jahr 2020 hier: <a href=\"https://data-bs.ch/mobilitaet/2020_Velo_Fuss_Count.csv\" target=\"_blank\">https://data-bs.ch/mobilitaet/2020_Velo_Fuss_Count.csv</a>.</p><p>Die Zählstellen sind auf MET eingestellt (Spalten TimeFrom und TimeTo), d.h. die Zeitumstellung wird wie in Mitteleuropa ausgeführt. Bei der Umstellung von Winter- auf Sommerzeit fehlt die Stunde der Umstellung, dieser Tag hat dann 23 Stunden. Bei der Umstellung von Sommer- auf Winterzeit ist eine Stunde zu viel enthalten (der Tag hat 25 Stunden). In diesem Fall werden die Zähldaten der beiden Stunden zusammengezählt. </p><p><br></p>",
-            "license": "CC0 1.0",
-            "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-            "tables": {
-                "ESC /code/data-processing/mobilitaet_verkehrszaehldaten/data/Velo_Fuss_Count": {
-                    "sort_desc": "DateTimeFrom",
-                     "columns": {
-                        "SiteCode": "Zählstellencode",
-                        "SiteName": "Zählstellenname",
-                        "DateTimeFrom": "Datum und Uhrzeit Messbeginn (in UTC)",
-                        "DateTimeTo": "Datum und Uhrzeit Messende (in UTC)",
-                        "DirectionName": "Richtung/Strassenseite",
-                        "LaneCode": "Spurnummer",
-                        "LaneName": "Spurname",
-                        "ValuesApproved": "Daten validiert (1 ja, 0 nein) (Validierte Verkehrszahlen sind kontrollierte und ergänzte Rohdaten. Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.)",
-                        "ValuesEdited": "Ersatzwerte (1 ja, 0 nein) (Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.)",
-                        "TrafficType": "Verkehrsmittel (MIV = motorisierter Individualverkehr)",
-                        "Total": "Anzahl Fahrzeuge",
-                        "Year": "Jahr",
-                        "Month": "Monat (1=Januar, 12=Dezember)",
-                        "Day": "Tag",
-                        "Weekday": "Wochentag (0=Montag, 6=Sonntag)",
-                        "HourFrom": "Stunde des Messbeginns",
-                        "Date": "Datum der Messung als Text",
-                        "TimeFrom": "Zeit Messbeginn als Text",
-                        "TimeTo": "Zeit Messende als Text",
-                        "DayOfYear": "Nummer des Tages innerhalb des aktuellen Jahres"
-                    }
-                }
-            }
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Zeitpunkt der Messung"
+          }
         }
+      }
+    },
+    "geschwindigkeitsmonitoring_data": {
+      "title": "Geschwindigkeitsmonitoring: Einzelmessungen",
+      "description_html": "<p></p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitorings der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Daten handelt es sich ausschliesslich um statistische Erhebungen. Diese stehen nicht in einem Zusammenhang mit Ordnungsbussen oder einer strafrechtlichen Verfolgung. Die statistischen Geschwindigkeitsmessungen dienen der Kantonspolizei Basel-Stadt zur Überprüfung der Geschwindigkeit sowie der Verkehrssicherheit (z.B. Sicherheit an Fussgängerstreifen) an der betreffenden Örtlichkeit. Die Ergebnisse dienen zur Entscheidung, an welchen Örtlichkeiten Handlungsbedarf in Form von Geschwindigkeitskontrollen besteht. Jedes Statistikgerät besitzt eine einzige Punktgeometrie und ist meist mit zwei Richtungen versehen (Richtung 1 und 2).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Messungen sind nicht zwingend repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitoring sind folgende Datensätze vorhanden:</p><ul><li>Einzelmessungen ab 2024:&nbsp;<a href=\"https://data.bs.ch/explore/dataset/100097/\">Link zu den Daten</a></li></ul>",
+      "license": "CC BY 3.0 CH",
+      "license_url": "https://creativecommons.org/licenses/by-nc/3.0/ch/",
+      "source": "Kantonspolizei",
+      "source_url": "https://www.polizei.bs.ch/",
+      "tables": {
+        "geschwindigkeitsmonitoring_data": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        }
+      }
+    },
+    "Geschwindigkeitsmonitoring": {
+      "title": "Geschwindigkeitsmonitoring",
+      "description_html": "<p></p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitorings der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Daten handelt es sich ausschliesslich um statistische Erhebungen. Diese stehen nicht in einem Zusammenhang mit Ordnungsbussen oder einer strafrechtlichen Verfolgung. Die statistischen Geschwindigkeitsmessungen dienen der Kantonspolizei Basel-Stadt zur Überprüfung der Geschwindigkeit sowie der Verkehrssicherheit (z.B. Sicherheit an Fussgängerstreifen) an der betreffenden Örtlichkeit. Die Ergebnisse dienen zur Entscheidung, an welchen Örtlichkeiten Handlungsbedarf in Form von Geschwindigkeitskontrollen besteht. Jedes Statistikgerät besitzt eine einzige Punktgeometrie und ist meist mit zwei Richtungen versehen (Richtung 1 und 2).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Messungen sind nicht zwingend repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitoring sind folgende Datensätze vorhanden:</p><ul><li>Einzelmessungen ab 2024:&nbsp;<a href=\"https://data.bs.ch/explore/dataset/100097/\">Link zu den Daten</a></li></ul>",
+      "license": "CC BY 3.0 CH",
+      "license_url": "https://creativecommons.org/licenses/by-nc/3.0/ch/",
+      "source": "Kantonspolizei",
+      "source_url": "https://www.polizei.bs.ch/",
+      "tables": {
+        "Einzelmessungen": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge",
+            "Zeit": "Uhrzeit (hh:mm:ss) einer gemessenen Fahrt",
+            "Datum": "Datum",
+            "Datum_Zeit": "Datum und Uhrzeit als Text"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Richtung ID"
+          ]
+        },
+        "Kennzahlen_pro_Richtung": {
+          "sort_desc": "Messung-ID",
+          "columns": {
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Richtung": "Name der Fahrtrichtung",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde"
+          },
+          "facets": [
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+            ]
+        }
+      }
+    },
+    "Geschwindigkeitsmonitoring_Jahre": {
+      "title": "Geschwindigkeitsmonitoring nach Jahr",
+      "description_html": "<p></p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitorings der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Daten handelt es sich ausschliesslich um statistische Erhebungen. Diese stehen nicht in einem Zusammenhang mit Ordnungsbussen oder einer strafrechtlichen Verfolgung. Die statistischen Geschwindigkeitsmessungen dienen der Kantonspolizei Basel-Stadt zur Überprüfung der Geschwindigkeit sowie der Verkehrssicherheit (z.B. Sicherheit an Fussgängerstreifen) an der betreffenden Örtlichkeit. Die Ergebnisse dienen zur Entscheidung, an welchen Örtlichkeiten Handlungsbedarf in Form von Geschwindigkeitskontrollen besteht. Jedes Statistikgerät besitzt eine einzige Punktgeometrie und ist meist mit zwei Richtungen versehen (Richtung 1 und 2).</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Messungen sind nicht zwingend repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p><p class=\"MsoNormal\" style=\"margin-bottom: 12pt; line-height: normal; background-image: initial; background-position: initial; background-size: initial;\">Geschwindigkeitsmonitoring sind folgende Datensätze vorhanden:</p><ul><li>Einzelmessungen ab 2024:&nbsp;<a href=\"https://data.bs.ch/explore/dataset/100097/\">Link zu den Daten</a></li></ul>",
+      "license": "CC BY 3.0 CH",
+      "license_url": "https://creativecommons.org/licenses/by-nc/3.0/ch/",
+      "source": "Kantonspolizei",
+      "source_url": "https://www.polizei.bs.ch/",
+      "tables": {
+        "2018": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        },
+        "2019": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        },
+        "2020": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        },
+        "2021": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        },
+        "2022": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        },
+        "2023": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        },
+        "2024": {
+          "sort_desc": "Timestamp",
+          "columns": {
+            "Timestamp": "Datum und Uhrzeit",
+            "Messung-ID": "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort",
+            "Richtung ID": "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen.",
+            "Geschwindigkeit": "Geschwindigkeit in km/h",
+            "Datum": "Datum",
+            "Zeit": "Uhrzeit (hh:mm:ss) der gemessenen Fahrt",
+            "Datum_Zeit": "Datum und Uhrzeit als Text",
+            "Messbeginn": "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde",
+            "Messende": "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war",
+            "Zone": "geltende Höchstgeschwindigkeit am Standort der Messung",
+            "Ort": "Gemeinde am Standort der Messung",
+            "Richtung": "Name der Fahrtrichtung",
+            "the_geom": "Koordinaten",
+            "Ue_Quote": "Übertretungsquote",
+            "V50": "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird",
+            "V85": "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird",
+            "Strasse": "Name der Strasse, an welcher ein Messgerät ausgebracht wurde",
+            "Strasse_Nr": "Hausnummer, bei welcher ein Messgerät ausgebracht wurde",
+            "Fzg": "Anzahl gemessene Fahrzeuge während der Messung",
+            "Fahrzeuglänge": "Vom Radar gemessene Fahrzeuglänge"
+          },
+          "facets": [
+            {"date":  "Timestamp"},
+            "Messung-ID",
+            "Richtung ID",
+            {"date":  "Messbeginn"},
+            {"date":  "Messende"},
+            "Zone",
+            "Ort",
+            "Strasse"
+          ]
+        }
+      }
+    },
+    "Velo_Fuss_Count": {
+      "title": "Verkehrszähldaten Velos und Fussgänger",
+      "description_html": "<p>Resultate der Messungen der&nbsp;Dauerzählstellen und Kurzzeitzählstellen für den Velo- und Fussgängerverkehr.&nbsp;</p><p>Die Zähldaten für den Fussgängerverkehr werden monatlich durch Anwendung einer Korrekturfunktion angepasst und im Anschluss veröffentlicht. Ausnahme bildet hier die Zählstelle 817 Elisabethenanlage. Diese wird auf Grund der aktuellen COVID-19 Krise täglich aufgearbeitet und beobachtet </p><p>Aus Kostengründen sind nur die Werte des aktuellen und des letzten Jahres als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar. Die vollständigen Daten ab dem Jahr 2000 können hier heruntergeladen werden: </p><ul><li><a href=\"https://data-bs.ch/mobilitaet/converted_Velo_Fuss_Count.csv\">Leicht aufbereiteter Datensatz: https://data-bs.ch/mobilitaet/converted_Velo_Fuss_Count.csv</a> </li><li><a href=\"https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv\">Rohdaten: https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv</a></li></ul><p>Die Daten einzelner Jahre ab dem Jahr 2000 können einzeln heruntergeladen werden unter der URL mit dem Muster https://data-bs.ch/mobilitaet/[JAHR]_Velo_Fuss_Count.csv, also zum Beispiel für das Jahr 2020 hier: <a href=\"https://data-bs.ch/mobilitaet/2020_Velo_Fuss_Count.csv\" target=\"_blank\">https://data-bs.ch/mobilitaet/2020_Velo_Fuss_Count.csv</a>.</p><p>Die Zählstellen sind auf MET eingestellt (Spalten TimeFrom und TimeTo), d.h. die Zeitumstellung wird wie in Mitteleuropa ausgeführt. Bei der Umstellung von Winter- auf Sommerzeit fehlt die Stunde der Umstellung, dieser Tag hat dann 23 Stunden. Bei der Umstellung von Sommer- auf Winterzeit ist eine Stunde zu viel enthalten (der Tag hat 25 Stunden). In diesem Fall werden die Zähldaten der beiden Stunden zusammengezählt. </p><p><br></p>",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "tables": {
+        "Velo_Fuss_Count": {
+          "sort_desc": "DateTimeFrom",
+          "columns": {
+            "SiteCode": "Zählstellencode",
+            "SiteName": "Zählstellenname",
+            "DateTimeFrom": "Datum und Uhrzeit Messbeginn (in UTC)",
+            "DateTimeTo": "Datum und Uhrzeit Messende (in UTC)",
+            "DirectionName": "Richtung/Strassenseite",
+            "LaneCode": "Spurnummer",
+            "LaneName": "Spurname",
+            "ValuesApproved": "Daten validiert (1 ja, 0 nein) (Validierte Verkehrszahlen sind kontrollierte und ergänzte Rohdaten. Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.)",
+            "ValuesEdited": "Ersatzwerte (1 ja, 0 nein) (Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.)",
+            "TrafficType": "Verkehrsmittel (MIV = motorisierter Individualverkehr)",
+            "Total": "Anzahl Fahrzeuge",
+            "Year": "Jahr",
+            "Month": "Monat (1=Januar, 12=Dezember)",
+            "Day": "Tag",
+            "Weekday": "Wochentag (0=Montag, 6=Sonntag)",
+            "HourFrom": "Stunde des Messbeginns",
+            "Date": "Datum der Messung als Text",
+            "TimeFrom": "Zeit Messbeginn als Text",
+            "TimeTo": "Zeit Messende als Text",
+            "DayOfYear": "Nummer des Tages innerhalb des aktuellen Jahres"
+          }
+        }
+      }
     }
+  }
 }
 
