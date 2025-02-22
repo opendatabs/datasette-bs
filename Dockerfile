@@ -6,3 +6,5 @@ RUN apt-get update && \
       libsqlite3-mod-spatialite && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+RUN pip install datasette-cluster-map
