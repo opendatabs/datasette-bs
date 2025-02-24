@@ -7,4 +7,4 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install datasette-cluster-map
+RUN pip install datasette-leaflet-geojson
