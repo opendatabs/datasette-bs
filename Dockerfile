@@ -1,4 +1,4 @@
-FROM datasetteproject/datasette:0.64.6
+FROM datasetteproject/datasette:0.65.1
 
 # Install system dependencies
 RUN apt-get update && \
