@@ -1,0 +1,80 @@
+databases:
+  smileys:
+    title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
+    description_html: >
+      <p>Einzelmessungen der Smiley-Geschwindigkeitsanzeigen der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung). 
+      Die Smiley-Geschwindigkeitsanzeigen sind nicht geeicht und entsprechend können die Werte von der tatsächlich gefahrenen Geschwindigkeit abweichen. 
+      Hinweis: Die Messungen sind nicht repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. 
+      Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung 
+      (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p>
+      <p>Die Geschwindigkeitsmessungen durchlaufen vier Phasen: <b>Vormessung</b>, <b>Betrieb</b>, <b>Nachmessung</b> und <b>nach Ende</b>. 
+      In der Vormessungsphase wird die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen gemessen, wobei die Anzeigen nicht aktiviert sind. 
+      In der Betriebsphase sind die Smiley-Geschwindigkeitsanzeigen hingegen eingeschaltet. 
+      Nachfolgend werden die Anzeigen ausgeschaltet und die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen wird erneut gemessen. 
+      Die letzte Phase 'nach Ende' sind Messungen, die ausserhalb des im Projekt definierten Zeitraums vorfallen.</p>
+    license: "CC BY 3.0 CH"
+    license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
+    tables:
+      smileys:
+        sort_desc: "Timestamp"
+        columns:
+          Timestamp: "Zeitpunkt der Messung"
+
+  Geschwindigkeitsmonitoring:
+    title: "Geschwindigkeitsmonitoring"
+    description_html: >
+      <p>Dieser Datensatze zeigt die Messungen des Geschwindigkeitsmonitorings der Kantonspolizei Basel-Stadt.</p>
+      <p>Daten handelt es sich ausschliesslich um statistische Erhebungen. 
+      Diese stehen nicht in einem Zusammenhang mit Ordnungsbussen oder einer strafrechtlichen Verfolgung. 
+      Die statistischen Geschwindigkeitsmessungen dienen der Kantonspolizei Basel-Stadt zur Überprüfung der Geschwindigkeit 
+      sowie der Verkehrssicherheit (z.B. Sicherheit an Fussgängerstreifen) an der betreffenden Örtlichkeit. 
+      Die Ergebnisse dienen zur Entscheidung, an welchen Örtlichkeiten Handlungsbedarf in Form von Geschwindigkeitskontrollen besteht. 
+      Jedes Statistikgerät besitzt eine einzige Punktgeometrie und ist meist mit zwei Richtungen versehen (Richtung 1 und 2).</p>
+      <p>Messungen sind nicht zwingend repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. 
+      Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. 
+      Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p>
+    license: "CC BY 3.0 CH"
+    license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
+    source: "Kantonspolizei"
+    source_url: "https://www.polizei.bs.ch/"
+    tables:
+      Einzelmessungen:
+        sort_desc: "Timestamp"
+        columns:
+          Timestamp: "Datum und Uhrzeit"
+          Messung-ID: "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort"
+          Richtung ID: "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen."
+          Geschwindigkeit: "Geschwindigkeit in km/h"
+          Fahrzeuglänge: "Vom Radar gemessene Fahrzeuglänge"
+          Zeit: "Uhrzeit (hh:mm:ss) der gemessenen Fahrt"
+          Datum: "Datum"
+          Datum_Zeit: "Datum und Uhrzeit als Text"
+        facets:
+          - date: "Timestamp"
+          - "Messung-ID"
+          - "Richtung ID"
+      Kennzahlen_pro_Richtung:
+        sort_desc: "Messung-ID"
+        columns:
+          Messung-ID: "Laufnummer der Messung; eine Messung beinhaltet alle Fahrten eines Messgeräts an einem Standort"
+          Richtung ID: "ID der Richtung; In einer Messung werden i.d.R. Fahrten in zwei Richtungen gemessen."
+          Richtung: "Name der Fahrtrichtung"
+          Fzg: "Anzahl gemessene Fahrzeuge während der Messung"
+          V50: "Höchstgeschwindigkeit, welche von 50% der Fahrzeuge nicht überschritten wird"
+          V85: "Höchstgeschwindigkeit, welche von 85% der Fahrzeuge nicht überschritten wird"
+          Messbeginn: "Datum, an welchem ein Messgerät an einem Standort ausgebracht wurde"
+          Messende: "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war"
+          Zone: "geltende Höchstgeschwindigkeit am Standort der Messung"
+          Ort: "Gemeinde am Standort der Messung"
+          the_geom: "Koordinaten"
+          Ue_Quote: "Übertretungsquote"
+          Strasse: "Name der Strasse, an welcher ein Messgerät ausgebracht wurde"
+          Strasse_Nr: "Hausnummer, bei welcher ein Messgerät ausgebracht wurde"
+        facets:
+          - "Messung-ID"
+          - "Richtung ID"
+          - date: "Messbeginn"
+          - date: "Messende"
+          - "Zone"
+          - "Ort"
+          - "Strasse"
