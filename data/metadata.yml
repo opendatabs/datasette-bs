@@ -1,3 +1,11 @@
+plugins:
+  datasette-geojson-map:
+    tile_layer: https://wmts.geo.bs.ch/wmts/1.0.0/BaseMap_grau/default/3857/{z}/{y}/{x}.png
+    tile_layer_options:
+      attribution: >-
+        Bereitgestellt von <a href="http://https://map.geo.bs.ch/?lang=de">Geodaten Kanton Basel-Stadt</a>, 
+        unter <a href="https://media.bs.ch/original_file/268afcb7a22e30a3632da9978638dabeb97c1eb1/20240822-osm-vektordaten.pdf">CC BY 4.0 + OpenStreetMap</a>.
+      minZoom: 10
 databases:
   smileys:
     title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
