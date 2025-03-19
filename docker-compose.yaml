@@ -6,4 +6,4 @@ services:
       - ./data:/mnt/data
     ports:
       - "8001:8001"
-    command: datasette serve /mnt/data --host 0.0.0.0 --port 8001 --setting sql_time_limit_ms 10000 --setting facet_time_limit_ms 10000 --load-extension=/usr/lib/x86_64-linux-gnu/mod_spatialite.so
+    command: datasette serve /mnt/data --host 0.0.0.0 --port 8001 --setting sql_time_limit_ms 10000 --setting facet_time_limit_ms 10000  --load-extension=spatialite
