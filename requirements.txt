@@ -1,4 +1,4 @@
 datasette-leaflet-geojson==0.8.2
-datasette-cluster-map==0.18.2
+datasette-geojson-map==0.5.0
 datasette-vega==0.6.2
 datasette-marimo==0.1.3
