@@ -11,8 +11,8 @@ plugins:
       $env: "GITHUB_CLIENT_ID"
     client_secret:
       $env: "GITHUB_CLIENT_SECRET"
-      load_orgs:
-        - "opendatabs"
+    load_orgs:
+      - "opendatabs"
 databases:
   smileys:
     title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
@@ -35,11 +35,7 @@ databases:
         columns:
           Timestamp: "Zeitpunkt der Messung"
     allow:
-      gh_id:
-        - "25539240"
-    allow_sql:
-      gh_id:
-        - "25539240"
+      gh_id: "25539240"
   Geschwindigkeitsmonitoring:
     title: "Geschwindigkeitsmonitoring"
     description_html: >
