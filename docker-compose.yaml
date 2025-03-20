@@ -2,6 +2,8 @@ services:
   datasette:
     restart: always
     build: .
+    env_file:
+      - .env
     volumes:
       - ./data:/mnt/data
     ports:
