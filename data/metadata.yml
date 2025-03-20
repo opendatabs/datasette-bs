@@ -11,8 +11,6 @@ plugins:
       $env: "GITHUB_CLIENT_ID"
     client_secret:
       $env: "GITHUB_CLIENT_SECRET"
-    load_orgs:
-      - "opendatabs"
 databases:
   smileys:
     title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
@@ -94,4 +92,3 @@ databases:
           - "Zone"
           - "Ort"
           - "Strasse"
-        allow: "opendatabs"
