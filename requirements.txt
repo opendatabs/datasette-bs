@@ -1,8 +1,6 @@
-datasette-leaflet-geojson==0.8.2
 datasette-geojson-map==0.5.0
 datasette-vega==0.6.2
 datasette-marimo==0.1.4
-datasette-plot==0.1.0
 datasette-copyable==0.3.2
 datasette-render-images==0.4
 datasette-render-html==1.0
