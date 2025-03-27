@@ -11,6 +11,10 @@ plugins:
       $env: "GITHUB_CLIENT_ID"
     client_secret:
       $env: "GITHUB_CLIENT_SECRET"
+custom_units:
+  - "Fahrzeuge = [] = Fzge"
+  - "Kilometer_pro_Stunde [] = km/h"
+  - "Meter = [] = m"
 databases:
   smileys:
     title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
@@ -51,6 +55,8 @@ databases:
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
     source: "Kantonspolizei"
     source_url: "https://www.polizei.bs.ch/"
+    about: "Vortrag zu Geschwindigkeitsmonitoring"
+    about_url: "https://youtu.be/9H3mTXdc-A8?feature=shared&t=1564"
     tables:
       Einzelmessungen:
         sort_desc: "Timestamp"
@@ -63,6 +69,9 @@ databases:
           Zeit: "Uhrzeit (hh:mm:ss) der gemessenen Fahrt"
           Datum: "Datum"
           Datum_Zeit: "Datum und Uhrzeit als Text"
+        units:
+          Geschwindigkeit: "Kilometer_pro_Stunde"
+          Fahrzeuglänge: "Meter"
         facets:
           - date: "Timestamp"
           - "Messung-ID"
@@ -84,6 +93,11 @@ databases:
           Ue_Quote: "Übertretungsquote"
           Strasse: "Name der Strasse, an welcher ein Messgerät ausgebracht wurde"
           Strasse_Nr: "Hausnummer, bei welcher ein Messgerät ausgebracht wurde"
+        units:
+            Fzg: "Fahrzeuge"
+            V50: "Kilometer_pro_Stunde"
+            V85: "Kilometer_pro_Stunde"
+            Zone: "Kilometer_pro_Stunde"
         facets:
           - "Messung-ID"
           - "Richtung ID"
@@ -92,3 +106,10 @@ databases:
           - "Zone"
           - "Ort"
           - "Strasse"
+    queries:
+      just_2023:
+        sql: "select * from Einzelmessungen where Timestamp like '2023%'"
+      just_2024:
+        sql: "select * from Einzelmessungen where Timestamp like '2024%'"
+      just_2025:
+        sql: "select * from Einzelmessungen where Timestamp like '2025%'"
