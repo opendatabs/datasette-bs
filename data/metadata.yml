@@ -140,3 +140,81 @@ databases:
           - "Zone"
           - "Ort"
           - "Strasse"
+  Velo_Fuss:
+    title: "Verkehrszähldaten Velos und Fussgänger"
+    description_html: >
+      <p>Resultate der Messungen der Dauerzählstellen und Kurzzeitzählstellen für den Velo- und Fussgängerverkehr.</p>
+      <p>Die Fussgängerzähldaten werden monatlich korrigiert und anschliessend veröffentlicht.</p>
+      <p>Aus Kostengründen sind nur die Daten des aktuellen und des letzten Jahres als Visualisierung bzw. via API abrufbar.</p>
+      <p>Alle Daten seit dem Jahr 2000:</p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_Velo_Fuss_Count.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv">Rohdaten</a></li>
+      </ul>
+      <p>FLIR-Zählstellen (Forward Looking Infrared):</p>
+      <p><b>Für Velos:</b></p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_FLIR_KtBS_Velo.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/FLIR_KtBS_Velo.csv">Rohdaten</a></li>
+      </ul>
+      <p><b>Für Fussgänger:</b></p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_FLIR_KtBS_FG.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/FLIR_KtBS_FG.csv">Rohdaten</a></li>
+      </ul>
+      <p>Lichtsignalanlagen (LSA):</p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_Velo_LSA_Count.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/Velo_LSA_Count.csv">Rohdaten</a></li>
+      </ul>
+      <p>Jahresweise Downloads ab 2000:</p>
+      <ul>
+        <li>Velo/Fuss: <code>https://data-bs.ch/mobilitaet/[JAHR]_Velo_Fuss_Count.csv</code></li>
+        <li>FLIR Velo: <code>https://data-bs.ch/mobilitaet/[JAHR]_FLIR_KtBS_Velo.csv</code></li>
+        <li>FLIR Fussgänger: <code>https://data-bs.ch/mobilitaet/[JAHR]_FLIR_KtBS_FG.csv</code></li>
+        <li>LSA: <code>https://data-bs.ch/mobilitaet/[JAHR]_Velo_LSA.csv</code></li>
+      </ul>
+      <p>Die Zeitangaben (TimeFrom, TimeTo) sind in MEZ (Mitteleuropäische Zeit). Zeitumstellungen werden berücksichtigt: Der Tag der Sommerzeitumstellung hat 23 Stunden, jener der Winterzeitumstellung 25 – bei letzterem werden doppelte Stundenwerte zusammengefasst.</p>
+    license: "CC BY 3.0 CH"
+    license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
+    source: "Amt für Mobilität"
+    source_url: "https://www.bs.ch/bvd/mobilitaet/grundlagen-und-strategien/parkplatzkataster-stadt-basel#verkehrszaehlungen"
+    about: "Dashboard zu Verkehrszählungen"
+    about_url: "https://data-bs.ch/mobilitaet/verkehrszaehl_dashboard/"
+    tables:
+      Velo_Fuss:
+        sort_desc: "DateTimeFrom"
+        columns:
+          Zst_id: "Zählstellennummer in numerischer Form"
+          SiteCode: "Zählstellencode"
+          SiteName: "Zählstellenname"
+          DateTimeFrom: "Datum und Uhrzeit Messbeginn (in UTC)"
+          DateTimeTo: "Datum und Uhrzeit Messende (in UTC)"
+          DirectionName: "Richtung/Strassenseite"
+          LaneCode: "Spurnummer"¨
+          LaneName: "Spurname"
+          ValuesApproved: "Daten validiert (1 ja, 0 nein) [Validierte Verkehrszahlen sind kontrollierte und ergänzte Rohdaten. Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.]"
+          ValuesEdited: "Ersatzwerte (1 ja, 0 nein) [Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.]"
+          TrafficType: "Verkehrsmittel (MIV = motorisierter Individualverkehr)"
+          Total: "Anzahl Fahrzeuge"
+          Year: "Jahr"
+          Month: "Monat (1=Januar, 12=Dezember)"
+          Day: "Tag"
+          Weekday: "Wochentag (0=Montag, 6=Sonntag)"
+          HourFrom: "Stunde des Messbeginns"
+          Date: "Datum der Messung im Format DD.MM.YYYY"
+          TimeFrom: "Uhrzeit des Messbeginns als Text"
+          TimeTo: "Uhrzeit des Messendes als Text"
+          DayOfYear: "Tag des Jahres"
+        facets:
+            - "SiteName"
+            - "LaneName"
+            - "TrafficType"
+            - "ValuesApproved"
+            - "ValuesEdited"
+            - "Year"
+            - "Month"
+            - "Day"
+            - "Weekday"
+            - "HourFrom"
+            - "DayOfYear"
