@@ -57,6 +57,14 @@ databases:
     source_url: "https://www.polizei.bs.ch/"
     about: "Vortrag zu Geschwindigkeitsmonitoring"
     about_url: "https://youtu.be/9H3mTXdc-A8?feature=shared&t=1564"
+    queries:
+      date_search:
+        sql: |-
+          select * 
+          from Einzelmessungen 
+          where Timestamp like '%' || :text || '%'
+          order by Timestamp desc
+        title: "Suche nach Datum"
     tables:
       Einzelmessungen:
         sort_desc: "Timestamp"
@@ -106,10 +114,3 @@ databases:
           - "Zone"
           - "Ort"
           - "Strasse"
-    queries:
-      just_2023:
-        sql: "select * from Einzelmessungen where Timestamp like '2023%'"
-      just_2024:
-        sql: "select * from Einzelmessungen where Timestamp like '2024%'"
-      just_2025:
-        sql: "select * from Einzelmessungen where Timestamp like '2025%'"
