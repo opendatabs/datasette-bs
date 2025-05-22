@@ -16,7 +16,7 @@ custom_units:
   - "Kilometer_pro_Stunde [] = km/h"
   - "Meter = [] = m"
 databases:
-  smileys:
+  Smiley-Geschwindigkeitsmessungen:
     title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
     description_html: >
       <p>Einzelmessungen der Smiley-Geschwindigkeitsanzeigen der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung). 
@@ -32,12 +32,38 @@ databases:
     license: "CC BY 3.0 CH"
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
     tables:
-      smileys:
-        sort_desc: "Timestamp"
+      Einzelmessungen:
+        sort_desc: "Messung_Timestamp"
         columns:
-          Timestamp: "Zeitpunkt der Messung"
-    allow:
-      gh_id: "25539240"
+          Messung_Timestamp: "Zeitpunkt der Messung"
+          id_standort: "Eindeutige Standortkennung"
+          Zyklus: "Messzyklus"
+          Phase: "Phase der Messung (Vormessung, Betrieb, Nachmessung oder nach Ende)"
+          Messung_Datum: "Datum der Messung"
+          Messung_Zeit: "Uhrzeit der Messung"
+          V_Einfahrt: "Einfahrtsgeschwindigkeit in km/h"
+          V_Ausfahrt: "Ausfahrtsgeschwindigkeit in km/h"
+          V_Delta: "Differenz zwischen Einfahrts- und Ausfahrtsgeschwindigkeit in km/h"
+        facets:
+          - "id_standort"
+          - "Zyklus"
+          - "Phase"
+      Einsatzplan:
+        sort_desc: "Start_Vormessung"
+        columns:
+          id_standort: "Eindeutige Standortkennung"
+          Zyklus: "Messzyklus"
+          Phase: "Phase der Messung (Vormessung, Betrieb, Nachmessung oder nach Ende)"
+          Strassenname: "Name der Strasse"
+          Geschwindigkeit: "Maximale erlaubte Geschwindigkeit"
+          Ort_Abkuerzung: "Abkürzung des Ortes"
+          Ort: "Ortsname"
+          Start_Vormessung: "Beginn der Vormessung (mit ausgeschalteter Anzeige)"
+          Start_Betrieb: "Beginn des aktiven Betriebs"
+          Start_Nachmessung: "Beginn der Nachmessung (mit ausgeschalteter Anzeige)"
+          Ende: "Ende des Messzyklus am Standort"
+          Messung_Jahr: "Jahr der Messung"
+          geometry: "Koordinaten des Messstandortes im GeoJSON-Format"
   Geschwindigkeitsmonitoring:
     title: "Geschwindigkeitsmonitoring"
     description_html: >
@@ -97,7 +123,7 @@ databases:
           Messende: "Datum, bis zu welchem ein Messgerät an einem Standort im Einsatz war"
           Zone: "geltende Höchstgeschwindigkeit am Standort der Messung"
           Ort: "Gemeinde am Standort der Messung"
-          the_geom: "Koordinaten"
+          geometry: "Koordinaten des Messstandortes im GeoJSON-Format"
           Ue_Quote: "Übertretungsquote"
           Strasse: "Name der Strasse, an welcher ein Messgerät ausgebracht wurde"
           Strasse_Nr: "Hausnummer, bei welcher ein Messgerät ausgebracht wurde"
