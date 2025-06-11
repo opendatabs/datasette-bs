@@ -255,8 +255,7 @@ databases:
       MIV:
         sort_desc: "DateTimeFrom"
         columns:
-          zst_nr: "Zählstellennummer als Text"
-          zst_id: "Zählstellennummer in numerischer Form"
+          Zst_id: "Zählstellennummer in numerischer Form"
           SiteCode: "Zählstellencode"
           SiteName: "Zählstellenname"
           DateTimeFrom: "Datum und Uhrzeit Messbeginn (in UTC)"
@@ -294,6 +293,71 @@ databases:
           - "TrafficType"
           - "ValuesApproved"
           - "ValuesEdited"
+          - "Year"
+          - "Month"
+          - "Day"
+          - "Weekday"
+          - "HourFrom"
+          - "DayOfYear"
+  MIV_Geschwindigkeitsklassen:
+    title: "Geschwindigkeitsklassen motorisierter Individualverkehr"
+    description_html: >
+      <p>Dieser Datensatz enthält die Geschwindigkeitsklassen des motorisierten Individualverkehrs. Die Daten werden vor der Veröffentlichung nicht überprüft oder ergänzt. Daher können jederzeit Datenlücken oder falsche Messungen aufgrund technischer Probleme oder Verkehrsbehinderungen auftreten.</p>
+      <p>Aus Kostengründen sind nur die Werte des aktuellen Jahres und der letzten zwei Jahre als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar.</p>
+      <p>Die vollständigen Daten ab dem Jahr 2014 können hier heruntergeladen werden:</p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_MIV_Speed.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/MIV_Speed.csv">Rohdaten</a></li>
+      </ul>
+      <p>Jahresweise Downloads ab 2014:</p>
+      <ul>
+        <li>MIV Speed: <code>https://data-bs.ch/mobilitaet/[JAHR]_MIV_Speed.csv</code></li>
+      </ul>
+    license: "CC BY 3.0 CH"
+    license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
+    source: "Amt für Mobilität"
+    source_url: "https://www.bs.ch/bvd/mobilitaet/grundlagen-und-strategien/parkplatzkataster-stadt-basel#verkehrszaehlungen"
+    about: "Dashboard zu Verkehrszählungen"
+    about_url: "https://data-bs.ch/mobilitaet/verkehrszaehl_dashboard/"
+    tables:
+      MIV_Geschwindigkeitsklassen:
+        sort_desc: "DateTimeFrom"
+        columns:
+          Zst_id: "Zählstellennummer"
+          SiteName: "Name des Standorts"
+          DirectionName: "Fahrtrichtung des Fahrzeugs"
+          LaneCode: "Spurnummer"
+          LaneName: "Spurname"
+          Date: "Datum der Messung als Text"
+          TimeFrom: "Zeit Messbeginn als Text"
+          TimeTo: "Zeit Messende als Text"
+          TrafficType: "Verkehrsmittel (MIV = motorisierter Individualverkehr)"
+          Total: "Anzahl Fahrzeuge"
+          <20: "Geschwindigkeit < 20 km/h"
+          20-30: "Geschwindigkeit 20–30 km/h"
+          30-40: "Geschwindigkeit 30–40 km/h"
+          40-50: "Geschwindigkeit 40–50 km/h"
+          50-60: "Geschwindigkeit 50–60 km/h"
+          60-70: "Geschwindigkeit 60–70 km/h"
+          70-80: "Geschwindigkeit 70–80 km/h"
+          80-90: "Geschwindigkeit 80–90 km/h"
+          90-100: "Geschwindigkeit 90–100 km/h"
+          100-110: "Geschwindigkeit 100–110 km/h"
+          110-120: "Geschwindigkeit 110–120 km/h"
+          120-130: "Geschwindigkeit 120–130 km/h"
+          \>130: "Geschwindigkeit > 130 km/h"
+          DateTimeFrom: "Datum und Uhrzeit Messbeginn (in UTC)"
+          DateTimeTo: "Datum und Uhrzeit Messende (in UTC)"
+          Year: "Jahr"
+          Month: "Monat (1=Januar, 12=Dezember)"
+          Day: "Tag"
+          Weekday: "Wochentag (0=Montag, 6=Sonntag)"
+          HourFrom: "Stunde des Messbeginns"
+          DayOfYear: "Nummer des Tages innerhalb des aktuellen Jahres"
+        facets:
+          - "SiteName"
+          - "LaneName"
+          - "TrafficType"
           - "Year"
           - "Month"
           - "Day"
