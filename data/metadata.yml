@@ -218,3 +218,85 @@ databases:
             - "Weekday"
             - "HourFrom"
             - "DayOfYear"
+  MIV:
+    title: "Verkehrszähldaten motorisierter Individualverkehr"
+    description_html: >
+      <p>Resultate der Messungen der Dauerzählstellen und Kurzzeitzählstellen für den Motorisierten Individualverkehr.</p>
+      <p>Aus Kostengründen sind nur die Werte des aktuellen Jahres und der letzten zwei Jahre als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar.</p>
+      <p>Die Zählstellen, die zwischen allen Fahrzeugklassen unterscheiden können, ab dem Jahr 2014 können hier heruntergeladen werden:</p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_MIV_Class_10_1.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/MIV_Class_10_1.csv">Rohdaten</a></li>
+      </ul>
+      <p>FLIR-Zählstellen (Forward Looking Infrared):</p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_FLIR_KtBS_MIV6.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/FLIR_KtBS_MIV6.csv">Rohdaten</a></li>
+      </ul>
+      <p>Lichtsignalanlagen (LSA):</p>
+      <ul>
+        <li><a href="https://data-bs.ch/mobilitaet/converted_MIV_LSA_Count.csv">Leicht aufbereiteter Datensatz</a></li>
+        <li><a href="https://data-bs.ch/mobilitaet/MIV_LSA_Count.csv">Rohdaten</a></li>
+      </ul>
+      <p>Jahresweise Downloads ab 2014:</p>
+      <ul>
+        <li>MIV: <code>https://data-bs.ch/mobilitaet/[JAHR]_MIV_Class_10_1.csv</code></li>
+        <li>FLIR: <code>https://data-bs.ch/mobilitaet/[JAHR]_FLIR_KtBS_MIV6.csv</code></li>
+        <li>LSA: <code>https://data-bs.ch/mobilitaet/[JAHR]_MIV_LSA.csv</code></li>
+      </ul>
+      <p>Die Zeitangaben (TimeFrom, TimeTo) sind in MEZ (Mitteleuropäische Zeit). Zeitumstellungen werden berücksichtigt: Der Tag der Sommerzeitumstellung hat 23 Stunden, jener der Winterzeitumstellung 25 – bei letzterem werden doppelte Stundenwerte zusammengefasst.</p>
+    license: "CC BY 3.0 CH"
+    license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
+    source: "Amt für Mobilität"
+    source_url: "https://www.bs.ch/bvd/mobilitaet/grundlagen-und-strategien/parkplatzkataster-stadt-basel#verkehrszaehlungen"
+    about: "Dashboard zu Verkehrszählungen"
+    about_url: "https://data-bs.ch/mobilitaet/verkehrszaehl_dashboard/"
+    tables:
+      MIV:
+        sort_desc: "DateTimeFrom"
+        columns:
+          zst_nr: "Zählstellennummer als Text"
+          zst_id: "Zählstellennummer in numerischer Form"
+          SiteCode: "Zählstellencode"
+          SiteName: "Zählstellenname"
+          DateTimeFrom: "Datum und Uhrzeit Messbeginn (in UTC)"
+          DateTimeTo: "Datum und Uhrzeit Messende (in UTC)"
+          DirectionName: "Richtung/Strassenseite"
+          LaneCode: "Spurnummer"
+          LaneName: "Spurname"
+          ValuesApproved: "Daten validiert (1 ja, 0 nein) [Validierte Verkehrszahlen sind kontrollierte und ergänzte Rohdaten. Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.]"
+          ValuesEdited: "Ersatzwerte (1 ja, 0 nein) [Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.]"
+          TrafficType: "Verkehrsmittel (MIV = motorisierter Individualverkehr)"
+          Total: "Anzahl Fahrzeuge"
+          MR: "Motorrad"
+          PW: "Personenwagen"
+          PW+: "Personenwagen mit Anhänger"
+          Lief: "Lieferwagen"
+          Lief+: "Lieferwagen mit Anhänger"
+          Lief+Aufl: "Lieferwagen mit Auflieger"
+          LW: "Lastwagen"
+          LW+: "Lastwagen mit Anhänger"
+          Sattelzug: "Sattelzug"
+          Bus: "Bus"
+          andere: "Nicht klassifizierbare Fahrzeuge"
+          Year: "Jahr"
+          Month: "Monat (1=Januar, 12=Dezember)"
+          Day: "Tag"
+          Weekday: "Wochentag (0=Montag, 6=Sonntag)"
+          HourFrom: "Stunde des Messbeginns"
+          Date: "Datum der Messung als Text"
+          TimeFrom: "Zeit Messbeginn als Text"
+          TimeTo: "Zeit Messende als Text"
+          DayOfYear: "Nummer des Tages innerhalb des aktuellen Jahres"
+        facets:
+          - "SiteName"
+          - "LaneName"
+          - "TrafficType"
+          - "ValuesApproved"
+          - "ValuesEdited"
+          - "Year"
+          - "Month"
+          - "Day"
+          - "Weekday"
+          - "HourFrom"
+          - "DayOfYear"
