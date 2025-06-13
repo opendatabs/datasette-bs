@@ -191,7 +191,7 @@ databases:
           DateTimeFrom: "Datum und Uhrzeit Messbeginn (in UTC)"
           DateTimeTo: "Datum und Uhrzeit Messende (in UTC)"
           DirectionName: "Richtung/Strassenseite"
-          LaneCode: "Spurnummer"¨
+          LaneCode: "Spurnummer"
           LaneName: "Spurname"
           ValuesApproved: "Daten validiert (1 ja, 0 nein) [Validierte Verkehrszahlen sind kontrollierte und ergänzte Rohdaten. Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.]"
           ValuesEdited: "Ersatzwerte (1 ja, 0 nein) [Fehlwerte werden dann ergänzt, wenn sie aufgrund von technischen Problemen entstanden sind.]"
@@ -333,7 +333,7 @@ databases:
           TimeTo: "Zeit Messende als Text"
           TrafficType: "Verkehrsmittel (MIV = motorisierter Individualverkehr)"
           Total: "Anzahl Fahrzeuge"
-          <20: "Geschwindigkeit < 20 km/h"
+          <20: "Geschwindigkeit < 20 km/h""Spurnummer"
           20-30: "Geschwindigkeit 20–30 km/h"
           30-40: "Geschwindigkeit 30–40 km/h"
           40-50: "Geschwindigkeit 40–50 km/h"
