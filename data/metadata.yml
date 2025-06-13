@@ -333,7 +333,7 @@ databases:
           TimeTo: "Zeit Messende als Text"
           TrafficType: "Verkehrsmittel (MIV = motorisierter Individualverkehr)"
           Total: "Anzahl Fahrzeuge"
-          <20: "Geschwindigkeit < 20 km/h""Spurnummer"
+          <20: "Geschwindigkeit < 20 km/h"
           20-30: "Geschwindigkeit 20–30 km/h"
           30-40: "Geschwindigkeit 30–40 km/h"
           40-50: "Geschwindigkeit 40–50 km/h"
