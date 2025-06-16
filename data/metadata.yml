@@ -381,7 +381,7 @@ databases:
     source: "Statistisches Amt"
     source_url: "https://statistik.bs.ch/hintergrund/befragungen"
     about: "Befragung 55plus 2023"
-    about_url: "https://statistik.bs.ch/suche?search={&quot;query&quot;:&quot;2023&quot;,&quot;filterTheme&quot;:&quot;successor-50.4&quot;}"
+    about_url: "https://statistik.bs.ch/suche?search=%7B%22query%22%3A%222023%22%2C%22filterTheme%22%3A%22successor-50.4%22%7D"
     tables:
       Antworten:
         sort_asc: "ID"
