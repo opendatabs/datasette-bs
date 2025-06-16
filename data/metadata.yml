@@ -18,19 +18,12 @@ custom_units:
 databases:
   Smiley-Geschwindigkeitsmessungen:
     title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
-    description_html: >
-      <p>Einzelmessungen der Smiley-Geschwindigkeitsanzeigen der Kantonspolizei Basel-Stadt ab 2023 (Zeitpunkt des Beginns der Messung). 
-      Die Smiley-Geschwindigkeitsanzeigen sind nicht geeicht und entsprechend können die Werte von der tatsächlich gefahrenen Geschwindigkeit abweichen. 
-      Hinweis: Die Messungen sind nicht repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. 
-      Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung 
-      (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p>
-      <p>Die Geschwindigkeitsmessungen durchlaufen vier Phasen: <b>Vormessung</b>, <b>Betrieb</b>, <b>Nachmessung</b> und <b>nach Ende</b>. 
-      In der Vormessungsphase wird die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen gemessen, wobei die Anzeigen nicht aktiviert sind. 
-      In der Betriebsphase sind die Smiley-Geschwindigkeitsanzeigen hingegen eingeschaltet. 
-      Nachfolgend werden die Anzeigen ausgeschaltet und die Geschwindigkeit der Fahrzeuge an den Smiley-Geschwindigkeitsanzeigen wird erneut gemessen. 
-      Die letzte Phase 'nach Ende' sind Messungen, die ausserhalb des im Projekt definierten Zeitraums vorfallen.</p>
     license: "CC BY 3.0 CH"
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
+    source: "Kantonspolizei Basel-Stadt"
+    source_url: "https://www.polizei.bs.ch/"
+    about: "Daten auf dem Datenportal"
+    about_url: "https://data.bs.ch/explore/dataset/100268/"
     tables:
       Einzelmessungen:
         sort_desc: "Messung_Timestamp"
@@ -66,23 +59,12 @@ databases:
           geometry: "Koordinaten des Messstandortes im GeoJSON-Format"
   Geschwindigkeitsmonitoring:
     title: "Geschwindigkeitsmonitoring"
-    description_html: >
-      <p>Dieser Datensatze zeigt die Messungen des Geschwindigkeitsmonitorings der Kantonspolizei Basel-Stadt.</p>
-      <p>Daten handelt es sich ausschliesslich um statistische Erhebungen. 
-      Diese stehen nicht in einem Zusammenhang mit Ordnungsbussen oder einer strafrechtlichen Verfolgung. 
-      Die statistischen Geschwindigkeitsmessungen dienen der Kantonspolizei Basel-Stadt zur Überprüfung der Geschwindigkeit 
-      sowie der Verkehrssicherheit (z.B. Sicherheit an Fussgängerstreifen) an der betreffenden Örtlichkeit. 
-      Die Ergebnisse dienen zur Entscheidung, an welchen Örtlichkeiten Handlungsbedarf in Form von Geschwindigkeitskontrollen besteht. 
-      Jedes Statistikgerät besitzt eine einzige Punktgeometrie und ist meist mit zwei Richtungen versehen (Richtung 1 und 2).</p>
-      <p>Messungen sind nicht zwingend repräsentativ für das ganze Jahr und müssen im Kontext des Erhebungsdatums betrachtet werden. 
-      Darüber hinaus wurden gewisse Messungen während einer ausserordentlichen Verkehrsführung (z.B. Umleitungsverkehr infolge von Baustellentätigkeiten etc.) erhoben. 
-      Manipulationen an Geräten können zu fehlerhaften Messungen führen.</p>
     license: "CC BY 3.0 CH"
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
     source: "Kantonspolizei"
     source_url: "https://www.polizei.bs.ch/"
-    about: "Vortrag zu Geschwindigkeitsmonitoring"
-    about_url: "https://youtu.be/9H3mTXdc-A8?feature=shared&t=1564"
+    about: "Daten auf dem Datenportal"
+    about_url: "https://data.bs.ch/explore/dataset/100097/"
     queries:
       date_search:
         sql: |-
@@ -142,45 +124,12 @@ databases:
           - "Strasse"
   Velo_Fuss:
     title: "Verkehrszähldaten Velos und Fussgänger"
-    description_html: >
-      <p>Resultate der Messungen der Dauerzählstellen und Kurzzeitzählstellen für den Velo- und Fussgängerverkehr.</p>
-      <p>Die Fussgängerzähldaten werden monatlich korrigiert und anschliessend veröffentlicht.</p>
-      <p>Aus Kostengründen sind nur die Daten des aktuellen und des letzten Jahres als Visualisierung bzw. via API abrufbar.</p>
-      <p>Alle Daten seit dem Jahr 2000:</p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_Velo_Fuss_Count.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/Velo_Fuss_Count.csv">Rohdaten</a></li>
-      </ul>
-      <p>FLIR-Zählstellen (Forward Looking Infrared):</p>
-      <p><b>Für Velos:</b></p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_FLIR_KtBS_Velo.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/FLIR_KtBS_Velo.csv">Rohdaten</a></li>
-      </ul>
-      <p><b>Für Fussgänger:</b></p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_FLIR_KtBS_FG.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/FLIR_KtBS_FG.csv">Rohdaten</a></li>
-      </ul>
-      <p>Lichtsignalanlagen (LSA):</p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_Velo_LSA_Count.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/Velo_LSA_Count.csv">Rohdaten</a></li>
-      </ul>
-      <p>Jahresweise Downloads ab 2000:</p>
-      <ul>
-        <li>Velo/Fuss: <code>https://data-bs.ch/mobilitaet/[JAHR]_Velo_Fuss_Count.csv</code></li>
-        <li>FLIR Velo: <code>https://data-bs.ch/mobilitaet/[JAHR]_FLIR_KtBS_Velo.csv</code></li>
-        <li>FLIR Fussgänger: <code>https://data-bs.ch/mobilitaet/[JAHR]_FLIR_KtBS_FG.csv</code></li>
-        <li>LSA: <code>https://data-bs.ch/mobilitaet/[JAHR]_Velo_LSA.csv</code></li>
-      </ul>
-      <p>Die Zeitangaben (TimeFrom, TimeTo) sind in MEZ (Mitteleuropäische Zeit). Zeitumstellungen werden berücksichtigt: Der Tag der Sommerzeitumstellung hat 23 Stunden, jener der Winterzeitumstellung 25 – bei letzterem werden doppelte Stundenwerte zusammengefasst.</p>
     license: "CC BY 3.0 CH"
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
     source: "Amt für Mobilität"
     source_url: "https://www.bs.ch/bvd/mobilitaet/grundlagen-und-strategien/parkplatzkataster-stadt-basel#verkehrszaehlungen"
-    about: "Dashboard zu Verkehrszählungen"
-    about_url: "https://data-bs.ch/mobilitaet/verkehrszaehl_dashboard/"
+    about: "Daten auf dem Datenportal"
+    about_url: "https://data.bs.ch/explore/dataset/100013/"
     tables:
       Velo_Fuss:
         sort_desc: "DateTimeFrom"
@@ -220,37 +169,12 @@ databases:
             - "DayOfYear"
   MIV:
     title: "Verkehrszähldaten motorisierter Individualverkehr"
-    description_html: >
-      <p>Resultate der Messungen der Dauerzählstellen und Kurzzeitzählstellen für den Motorisierten Individualverkehr.</p>
-      <p>Aus Kostengründen sind nur die Werte des aktuellen Jahres und der letzten zwei Jahre als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar.</p>
-      <p>Die Zählstellen, die zwischen allen Fahrzeugklassen unterscheiden können, ab dem Jahr 2014 können hier heruntergeladen werden:</p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_MIV_Class_10_1.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/MIV_Class_10_1.csv">Rohdaten</a></li>
-      </ul>
-      <p>FLIR-Zählstellen (Forward Looking Infrared):</p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_FLIR_KtBS_MIV6.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/FLIR_KtBS_MIV6.csv">Rohdaten</a></li>
-      </ul>
-      <p>Lichtsignalanlagen (LSA):</p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_MIV_LSA_Count.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/MIV_LSA_Count.csv">Rohdaten</a></li>
-      </ul>
-      <p>Jahresweise Downloads ab 2014:</p>
-      <ul>
-        <li>MIV: <code>https://data-bs.ch/mobilitaet/[JAHR]_MIV_Class_10_1.csv</code></li>
-        <li>FLIR: <code>https://data-bs.ch/mobilitaet/[JAHR]_FLIR_KtBS_MIV6.csv</code></li>
-        <li>LSA: <code>https://data-bs.ch/mobilitaet/[JAHR]_MIV_LSA.csv</code></li>
-      </ul>
-      <p>Die Zeitangaben (TimeFrom, TimeTo) sind in MEZ (Mitteleuropäische Zeit). Zeitumstellungen werden berücksichtigt: Der Tag der Sommerzeitumstellung hat 23 Stunden, jener der Winterzeitumstellung 25 – bei letzterem werden doppelte Stundenwerte zusammengefasst.</p>
     license: "CC BY 3.0 CH"
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
     source: "Amt für Mobilität"
     source_url: "https://www.bs.ch/bvd/mobilitaet/grundlagen-und-strategien/parkplatzkataster-stadt-basel#verkehrszaehlungen"
-    about: "Dashboard zu Verkehrszählungen"
-    about_url: "https://data-bs.ch/mobilitaet/verkehrszaehl_dashboard/"
+    about: "Daten auf dem Datenportal"
+    about_url: "https://data.bs.ch/explore/dataset/100006/"
     tables:
       MIV:
         sort_desc: "DateTimeFrom"
@@ -301,24 +225,12 @@ databases:
           - "DayOfYear"
   MIV_Geschwindigkeitsklassen:
     title: "Geschwindigkeitsklassen motorisierter Individualverkehr"
-    description_html: >
-      <p>Dieser Datensatz enthält die Geschwindigkeitsklassen des motorisierten Individualverkehrs. Die Daten werden vor der Veröffentlichung nicht überprüft oder ergänzt. Daher können jederzeit Datenlücken oder falsche Messungen aufgrund technischer Probleme oder Verkehrsbehinderungen auftreten.</p>
-      <p>Aus Kostengründen sind nur die Werte des aktuellen Jahres und der letzten zwei Jahre als Tabelle / Visualisierung sichtbar bzw. via API abgreifbar.</p>
-      <p>Die vollständigen Daten ab dem Jahr 2014 können hier heruntergeladen werden:</p>
-      <ul>
-        <li><a href="https://data-bs.ch/mobilitaet/converted_MIV_Speed.csv">Leicht aufbereiteter Datensatz</a></li>
-        <li><a href="https://data-bs.ch/mobilitaet/MIV_Speed.csv">Rohdaten</a></li>
-      </ul>
-      <p>Jahresweise Downloads ab 2014:</p>
-      <ul>
-        <li>MIV Speed: <code>https://data-bs.ch/mobilitaet/[JAHR]_MIV_Speed.csv</code></li>
-      </ul>
     license: "CC BY 3.0 CH"
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
     source: "Amt für Mobilität"
     source_url: "https://www.bs.ch/bvd/mobilitaet/grundlagen-und-strategien/parkplatzkataster-stadt-basel#verkehrszaehlungen"
-    about: "Dashboard zu Verkehrszählungen"
-    about_url: "https://data-bs.ch/mobilitaet/verkehrszaehl_dashboard/"
+    about: "Daten auf dem Datenportal"
+    about_url: "https://data.bs.ch/explore/dataset/100356/"
     tables:
       MIV_Geschwindigkeitsklassen:
         sort_desc: "DateTimeFrom"
@@ -366,22 +278,12 @@ databases:
           - "DayOfYear"
   Befragung_55plus_2023:
     title: "Befragung 55plus (2023)"
-    description_html: >
-      <p>Antworten der kantonalen Bevölkerungsbefragung von Personen ab 55 Jahren. 
-      Die Befragung wird alle vier Jahre durchgeführt.</p>
-      <p>Dieser Datensatz enthält pro Zeile eine Antwort einer Person auf eine Frage der Befragung.</p>
-      <p>Die Daten können auch als ZIP-Datei in anderen Formaten heruntergeladen werden: 
-      <a href="https://data-bs.ch/stata/befragungen/55plus/2023.zip">https://data-bs.ch/stata/befragungen/55plus/2023.zip</a></p>
-      <p>Weitere Informationen zur Befragung finden Sie im Statistikportal: 
-      <a href="https://statistik.bs.ch/suche?search={&quot;query&quot;:&quot;2023&quot;,&quot;filterTheme&quot;:&quot;successor-50.4&quot;}">https://statistik.bs.ch/suche?search={"query":"2023","filterTheme":"successor-50.4"}</a></p>
-      <p>Die zugehörigen Fragen zu den Fragennummern finden Sie entweder in der ZIP-Datei oder direkt im Datenportal:
-      <p><a href="https://data.bs.ch/explore/dataset/100412">https://data.bs.ch/explore/dataset/100412</a></p>
     license: "CC BY 3.0 CH"
     license_url: "https://creativecommons.org/licenses/by-nc/3.0/ch/"
     source: "Statistisches Amt"
     source_url: "https://statistik.bs.ch/hintergrund/befragungen"
-    about: "Befragung 55plus 2023"
-    about_url: "https://statistik.bs.ch/suche?search=%7B%22query%22%3A%222023%22%2C%22filterTheme%22%3A%22successor-50.4%22%7D"
+    about: "Daten auf dem Datenportal"
+    about_url: "https://data.bs.ch/explore/dataset/100412/"
     tables:
       Antworten:
         sort_asc: "ID"
