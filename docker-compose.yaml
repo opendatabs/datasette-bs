@@ -8,4 +8,4 @@ services:
       - ./data:/mnt/data
     ports:
       - "8001:8001"
-    command: datasette serve /mnt/data --host 0.0.0.0 --port 8001 --setting max_returned_rows 100000 --setting sql_time_limit_ms 50000 --setting facet_time_limit_ms 50000 --setting max_csv_mb 0 --load-extension=spatialite
+    command: datasette serve /mnt/data --host 0.0.0.0 --port 8001 --setting max_returned_rows 100000 --setting sql_time_limit_ms 50000 --setting facet_time_limit_ms 50000 --setting max_csv_mb 0 --setting force_https_urls 1 --load-extension=spatialite
