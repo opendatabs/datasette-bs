@@ -26,8 +26,8 @@ services:
     image: datasetteproject/datasette
     volumes:
       - ./data:/mnt/data
-    entrypoint: [
-      "datasette", "inspect", 
-      "/mnt/data", 
-      "--inspect-file=/mnt/data/counts.json"
-    ]
+    entrypoint: /bin/sh
+    command: >
+      -c "
+      datasette inspect /mnt/data/*.db
+      --inspect-file=/mnt/data/counts.json"
