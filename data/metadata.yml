@@ -11,10 +11,6 @@ plugins:
       $env: "GITHUB_CLIENT_ID"
     client_secret:
       $env: "GITHUB_CLIENT_SECRET"
-custom_units:
-  - "Fahrzeuge = [] = Fzge"
-  - "Kilometer_pro_Stunde [] = km/h"
-  - "Meter = [] = m"
 databases:
   Smiley-Geschwindigkeitsmessungen:
     title: "Einzelmessungen der Smiley-Geschwindigkeitsanzeigen"
