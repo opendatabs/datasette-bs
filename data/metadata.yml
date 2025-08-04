@@ -85,9 +85,6 @@ databases:
           Zeit: "Uhrzeit (hh:mm:ss) der gemessenen Fahrt"
           Datum: "Datum"
           Datum_Zeit: "Datum und Uhrzeit als Text"
-        units:
-          Geschwindigkeit: "Kilometer_pro_Stunde"
-          Fahrzeuglänge: "Meter"
         facets:
           - date: "Timestamp"
           - "Messung-ID"
@@ -109,11 +106,6 @@ databases:
           Ue_Quote: "Übertretungsquote"
           Strasse: "Name der Strasse, an welcher ein Messgerät ausgebracht wurde"
           Strasse_Nr: "Hausnummer, bei welcher ein Messgerät ausgebracht wurde"
-        units:
-            Fzg: "Fahrzeuge"
-            V50: "Kilometer_pro_Stunde"
-            V85: "Kilometer_pro_Stunde"
-            Zone: "Kilometer_pro_Stunde"
         facets:
           - "Messung-ID"
           - "Richtung ID"
