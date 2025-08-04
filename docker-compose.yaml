@@ -8,10 +8,10 @@ services:
       - ./data:/mnt/data
     ports:
       - "8001:8001"
+    entrypoint: /bin/sh
     command: >
-      datasette 
-      serve
-      -i /mnt/data 
+      -c "
+      datasette serve -i /mnt/data/*.db 
       --inspect-file=/mnt/data/counts.json 
       --host 0.0.0.0 
       --port 8001 
@@ -20,7 +20,7 @@ services:
       --setting facet_time_limit_ms 50000 
       --setting max_csv_mb 0 
       --setting force_https_urls 1 
-      --load-extension=spatialite
+      --load-extension=spatialite"
 
   datasette-inspect:
     image: datasetteproject/datasette
