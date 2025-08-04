@@ -13,6 +13,7 @@ services:
       -c "
       datasette serve -i /mnt/data/*.db 
       --inspect-file=/mnt/data/counts.json 
+      --metadata /mnt/data/metadata.yml
       --host 0.0.0.0 
       --port 8001 
       --setting max_returned_rows 100000 
