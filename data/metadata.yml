@@ -33,10 +33,6 @@ databases:
           V_Einfahrt: "Einfahrtsgeschwindigkeit in km/h"
           V_Ausfahrt: "Ausfahrtsgeschwindigkeit in km/h"
           V_Delta: "Differenz zwischen Einfahrts- und Ausfahrtsgeschwindigkeit in km/h"
-        facets:
-          - "id_standort"
-          - "Zyklus"
-          - "Phase"
       Einsatzplan:
         sort_desc: "Start_Vormessung"
         columns:
