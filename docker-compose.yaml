@@ -1,7 +1,7 @@
 services:
   datasette:
     restart: always
-    image: datasetteproject/datasette
+    build: .
     env_file:
       - .env
     volumes:
@@ -24,7 +24,7 @@ services:
       --load-extension=spatialite"
 
   datasette-inspect:
-    image: datasetteproject/datasette
+    build: .
     volumes:
       - ./data:/mnt/data
     entrypoint: /bin/sh
