@@ -77,10 +77,6 @@ databases:
           Zeit: "Uhrzeit (hh:mm:ss) der gemessenen Fahrt"
           Datum: "Datum"
           Datum_Zeit: "Datum und Uhrzeit als Text"
-        facets:
-          - date: "Timestamp"
-          - "Messung-ID"
-          - "Richtung ID"
       Kennzahlen_pro_Richtung:
         sort_desc: "Messung-ID"
         columns:
@@ -147,10 +143,7 @@ databases:
             - "ValuesEdited"
             - "Year"
             - "Month"
-            - "Day"
             - "Weekday"
-            - "HourFrom"
-            - "DayOfYear"
   MIV:
     title: "Verkehrszähldaten motorisierter Individualverkehr"
     license: "CC BY 3.0 CH"
@@ -198,15 +191,11 @@ databases:
         facets:
           - "SiteName"
           - "LaneName"
-          - "TrafficType"
           - "ValuesApproved"
           - "ValuesEdited"
           - "Year"
           - "Month"
-          - "Day"
           - "Weekday"
-          - "HourFrom"
-          - "DayOfYear"
   MIV_Geschwindigkeitsklassen:
     title: "Geschwindigkeitsklassen motorisierter Individualverkehr"
     license: "CC BY 3.0 CH"
