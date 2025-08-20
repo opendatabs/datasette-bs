@@ -249,12 +249,10 @@ databases:
         facets:
           - "SiteName"
           - "LaneName"
-          - "TrafficType"
           - "Year"
           - "Month"
           - "Day"
           - "Weekday"
-          - "HourFrom"
           - "DayOfYear"
   Befragung_55plus_2023:
     title: "Befragung 55plus (2023)"
