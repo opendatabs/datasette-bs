@@ -1,4 +1,4 @@
-FROM datasetteproject/datasette:0.65.2
+FROM datasetteproject/datasette:0.65.1
 
 # Install Datasette plugins
 COPY requirements.txt .
