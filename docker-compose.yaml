@@ -1,34 +1,48 @@
 services:
   datasette:
-    restart: always
     build: .
+    restart: always
     env_file:
       - .env
     volumes:
       - ./data:/mnt/data
-    ports:
-      - "8001:8001"
+    expose:
+      - "8001" 
+    networks:
+      - webnet
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8001/-/versions"]
+      interval: 60s
+      timeout: 2s
+      retries: 3
+      start_period: 20s
     entrypoint: /bin/sh
     command: >
       -c "
-      datasette serve -i /mnt/data/*.db 
-      --inspect-file=/mnt/data/counts.json 
+      datasette serve -i /mnt/data/*.db
+      --inspect-file=/mnt/data/counts.json
       --metadata /mnt/data/metadata.yml
-      --host 0.0.0.0 
-      --port 8001 
-      --setting max_returned_rows 10000 
-      --setting sql_time_limit_ms 50000 
-      --setting facet_time_limit_ms 50000 
-      --setting max_csv_mb 0 
-      --setting force_https_urls 1 
+      --host 0.0.0.0
+      --port 8001
+      --setting max_returned_rows 1000
+      --setting sql_time_limit_ms 50000
+      --setting facet_time_limit_ms 50000
+      --setting max_csv_mb 0
+      --setting force_https_urls 1
       --load-extension=spatialite"
 
   datasette-inspect:
     build: .
     volumes:
       - ./data:/mnt/data
+    networks:
+      - webnet
     entrypoint: /bin/sh
     command: >
       -c "
       datasette inspect /mnt/data/*.db
       --inspect-file=/mnt/data/counts.json"
+
+networks:
+  webnet:
+    external: true
