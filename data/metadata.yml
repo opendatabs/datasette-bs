@@ -140,10 +140,6 @@ databases:
           TimeFrom: "Uhrzeit des Messbeginns als Text"
           TimeTo: "Uhrzeit des Messendes als Text"
           DayOfYear: "Tag des Jahres"
-        facets:
-            - "SiteName"
-            - "LaneName"
-            - "TrafficType"
   MIV:
     title: "Verkehrszähldaten motorisierter Individualverkehr"
     license: "CC BY 3.0 CH"
@@ -188,9 +184,6 @@ databases:
           TimeFrom: "Zeit Messbeginn als Text"
           TimeTo: "Zeit Messende als Text"
           DayOfYear: "Nummer des Tages innerhalb des aktuellen Jahres"
-        facets:
-          - "SiteName"
-          - "LaneName"
   MIV_Geschwindigkeitsklassen:
     title: "Geschwindigkeitsklassen motorisierter Individualverkehr"
     license: "CC BY 3.0 CH"
@@ -234,9 +227,6 @@ databases:
           Weekday: "Wochentag (0=Montag, 6=Sonntag)"
           HourFrom: "Stunde des Messbeginns"
           DayOfYear: "Nummer des Tages innerhalb des aktuellen Jahres"
-        facets:
-          - "SiteName"
-          - "LaneName"
   GrosserRat:
     title: "Grosser Rat"
     license: "CC BY 3.0 CH"
