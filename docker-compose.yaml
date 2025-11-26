@@ -1,5 +1,6 @@
 services:
   datasette:
+    container_name: datasette
     build: .
     restart: always
     env_file:
@@ -7,7 +8,7 @@ services:
     volumes:
       - ./data:/mnt/data
     expose:
-      - "8001" 
+      - "8001"
     networks:
       - webnet
     healthcheck:
@@ -24,10 +25,7 @@ services:
       --metadata /mnt/data/metadata.yml
       --host 0.0.0.0
       --port 8001
-      --setting max_returned_rows 1000
-      --setting sql_time_limit_ms 50000
-      --setting facet_time_limit_ms 50000
-      --setting max_csv_mb 0
+      --setting max_returned_rows 2000
       --setting force_https_urls 1
       --load-extension=spatialite"
 
