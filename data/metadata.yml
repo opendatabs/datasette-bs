@@ -103,8 +103,6 @@ databases:
           link_zu_einzelmessungen: "Link zu den Einzelmessungen der Messung"
           geometry: "Koordinaten des Messstandortes im GeoJSON-Format"
         facets:
-          - date: "Messbeginn"
-          - date: "Messende"
           - "Zone"
           - "Ort"
           - "Strasse"
@@ -146,11 +144,6 @@ databases:
             - "SiteName"
             - "LaneName"
             - "TrafficType"
-            - "ValuesApproved"
-            - "ValuesEdited"
-            - "Year"
-            - "Month"
-            - "Weekday"
   MIV:
     title: "Verkehrszähldaten motorisierter Individualverkehr"
     license: "CC BY 3.0 CH"
@@ -198,11 +191,6 @@ databases:
         facets:
           - "SiteName"
           - "LaneName"
-          - "ValuesApproved"
-          - "ValuesEdited"
-          - "Year"
-          - "Month"
-          - "Weekday"
   MIV_Geschwindigkeitsklassen:
     title: "Geschwindigkeitsklassen motorisierter Individualverkehr"
     license: "CC BY 3.0 CH"
@@ -249,11 +237,6 @@ databases:
         facets:
           - "SiteName"
           - "LaneName"
-          - "Year"
-          - "Month"
-          - "Day"
-          - "Weekday"
-          - "DayOfYear"
   GrosserRat:
     title: "Grosser Rat"
     license: "CC BY 3.0 CH"
@@ -419,18 +402,3 @@ databases:
     tables:
       Antworten:
         sort_asc: "ID"
-        facets:
-          - "Methode"
-          - "S1"
-          - "S2"
-          - "S3"
-          - "S4"
-          - "S5"
-          - "S6"
-          - "S7"
-          - "WV"
-          - "Wohndauer_Adresse"
-          - "Wohndauer_Quartier"
-          - "Wohndauer_Kanton"
-          - "Wohnflaeche"
-          - "Zimmerzahl"
