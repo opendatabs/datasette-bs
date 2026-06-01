@@ -7,6 +7,8 @@ services:
       - .env
     volumes:
       - ./data:/mnt/data
+      - ./templates:/mnt/templates:ro
+      - ./static:/mnt/static:ro
     expose:
       - "8001"
     networks:
@@ -30,7 +32,9 @@ services:
       --setting facet_time_limit_ms 50000
       --setting max_csv_mb 0
       --setting force_https_urls 1
-      --load-extension=spatialite"
+      --load-extension=spatialite
+      --template-dir=/mnt/templates
+      --static bs:/mnt/static/bs"
 
   datasette-inspect:
     build: .
@@ -42,7 +46,8 @@ services:
     command: >
       -c "
       datasette inspect /mnt/data/*.db
-      --inspect-file=/mnt/data/counts.json"
+      --inspect-file=/mnt/data/counts.json
+      --load-extension=spatialite"
 
 networks:
   webnet:

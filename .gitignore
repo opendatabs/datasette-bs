@@ -1,3 +1,4 @@
 data/*.db
 .idea
 .env
+data/counts.json

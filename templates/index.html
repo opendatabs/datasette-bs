@@ -1,0 +1,12 @@
+{% extends "default:index.html" %}
+
+{% block description_source_license %}
+<div class="bs-intro">
+  <p>
+    {{ metadata.description or "Interaktive Datenauswertungen des Kantons Basel-Stadt." }}
+    Weitere offene Datensätze finden Sie auf
+    <a href="https://data.bs.ch">data.bs.ch</a>.
+  </p>
+</div>
+{{ super() }}
+{% endblock %}

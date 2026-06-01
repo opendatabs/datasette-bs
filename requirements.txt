@@ -6,4 +6,3 @@ datasette-render-images==0.4
 datasette-render-html==1.0
 datasette-render-markdown==2.2.1
 datasette-auth-github==0.14
-datasette-comments==0.1.0

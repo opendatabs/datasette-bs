@@ -1,3 +1,8 @@
+title: Datatools Basel-Stadt
+description: >
+  Interaktive Datenauswertungen des Kantons Basel-Stadt.
+extra_css_urls:
+  - /bs/datatools.css
 plugins:
   datasette-geojson-map:
     tile_layer: https://wmts.geo.bs.ch/wmts/1.0.0/BaseMap_grau/default/3857/{z}/{y}/{x}.png
