@@ -22,6 +22,7 @@ databases:
     about_url: "https://data.bs.ch/explore/dataset/100268/"
     tables:
       Einzelmessungen:
+        size: 50
         sort_desc: "Messung_Timestamp"
         columns:
           Messung_Timestamp: "Zeitpunkt der Messung"
@@ -61,13 +62,14 @@ databases:
     queries:
       date_search:
         sql: |-
-          select * 
-          from Einzelmessungen 
-          where Timestamp like '%' || :text || '%'
+          select *
+          from Einzelmessungen
+          where Timestamp like :text || '%'
           order by Timestamp desc
-        title: "Suche nach Datum"
+        title: "Suche nach Datum (Präfix, z.B. 2024-03)"
     tables:
       Einzelmessungen:
+        size: 50
         sort_desc: "Timestamp"
         columns:
           Timestamp: "Datum und Uhrzeit"
@@ -117,6 +119,7 @@ databases:
     about_url: "https://data.bs.ch/explore/dataset/100013/"
     tables:
       Velo_Fuss:
+        size: 50
         sort_desc: "DateTimeFrom"
         columns:
           Zst_id: "Zählstellennummer in numerischer Form"
@@ -150,6 +153,7 @@ databases:
     about_url: "https://data.bs.ch/explore/dataset/100006/"
     tables:
       MIV:
+        size: 50
         sort_desc: "DateTimeFrom"
         columns:
           Zst_id: "Zählstellennummer in numerischer Form"
@@ -194,6 +198,7 @@ databases:
     about_url: "https://data.bs.ch/explore/dataset/100356/"
     tables:
       MIV_Geschwindigkeitsklassen:
+        size: 50
         sort_desc: "DateTimeFrom"
         columns:
           Zst_id: "Zählstellennummer"

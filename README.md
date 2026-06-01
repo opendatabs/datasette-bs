@@ -1,10 +1,23 @@
-# How to upgrade to a more recent Datasette Version
-Change the version number in Dockerfile, and run the following sequence of commands in the root directory.
+# Datasette on Docker
 
-$docker compose down
+## Start
 
-$docker compose build
+```bash
+docker network create webnet   # once
+docker compose run --rm datasette-inspect   # after adding or changing .db files in data/
+docker compose up -d --build
+```
 
-$docker compose up -d
+Put SQLite files in `data/`. Copy `.env` for GitHub OAuth (`GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`) if you use auth.
 
-You can add additional steps in the Dockerfile, e.g. to install Datasette plugins
+Datasette listens on port **8001** on the `webnet` network—point your reverse proxy at `datasette:8001`.
+
+## Upgrade Datasette
+
+Change the version in `Dockerfile`, then:
+
+```bash
+docker compose down
+docker compose build
+docker compose up -d
+```
