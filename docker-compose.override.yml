@@ -1,0 +1,5 @@
+# Merged automatically by `docker compose up` — publishes Datasette on the Mac.
+services:
+  datasette:
+    ports:
+      - "8001:8001"

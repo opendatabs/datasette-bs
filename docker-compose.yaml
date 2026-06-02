@@ -9,6 +9,7 @@ services:
       - ./data:/mnt/data
       - ./templates:/mnt/templates:ro
       - ./static:/mnt/static:ro
+      - ./plugins:/mnt/plugins:ro
     expose:
       - "8001"
     networks:
@@ -34,6 +35,7 @@ services:
       --setting force_https_urls 1
       --load-extension=spatialite
       --template-dir=/mnt/templates
+      --plugins-dir=/mnt/plugins
       --static bs:/mnt/static/bs"
 
   datasette-inspect:

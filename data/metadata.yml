@@ -1,6 +1,7 @@
-title: Datatools Basel-Stadt
+title: Erweiterter Datenportal Kanton Basel-Stadt
 description: >
-  Interaktive Datenauswertungen des Kantons Basel-Stadt.
+  Datensätze, die für das öffentliche Datenportal data.bs.ch zu umfangreich sind, werden hier bereitgestellt. 
+  In https://data.bs.ch findet man weiterhin eine Vorschau der aktuellsten Daten und alle Metadaten zu den Datensätzen.
 extra_css_urls:
   - /bs/datatools.css
 plugins:

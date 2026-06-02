@@ -1,25 +1,39 @@
-<footer class="bs-site-footer">
-  <div class="bs-site-footer__links">
-    <a href="https://www.bs.ch/rechtliches/impressum.html">Impressum</a>
-    <a href="https://www.bs.ch/rechtliches/datenschutz.html">Datenschutz</a>
+<hr class="bs-footer-rule" />
+<div class="bs-page-footer">
+  <h2 class="bs-sr-only">Fusszeile</h2>
+  <div class="bs-page-footer__container">
+    <nav class="bs-page-footer__section" aria-label="Schnellzugriffs-Navigationsmenü">
+      <ul class="bs-footer-pills">
+        <li>
+          <a class="bs-button bs-button--pill" href="https://www.bs.ch/pd/statistik" target="_blank" rel="noopener noreferrer">
+            Über uns
+          </a>
+        </li>
+        <li>
+          <a class="bs-button bs-button--pill" href="https://www.bs.ch/daten/databs/dcc" target="_blank" rel="noopener noreferrer">
+            DCC Data Competence Center
+          </a>
+        </li>
+        <li>
+          <a class="bs-button bs-button--pill" href="https://github.com/opendatabs/datasette-bs" target="_blank" rel="noopener noreferrer">
+            Code auf Github
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="bs-page-footer__section" aria-label="Metadatenmenü">
+      <ul class="bs-footer-meta-nav">
+        <li><a href="https://www.bs.ch">Startseite</a></li>
+        <li><a href="https://www.bs.ch/rechtliches/datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </nav>
+
+    <p class="bs-footer-copy">© 2026 Basel-Stadt</p>
+
+    <p class="bs-footer-attribution">
+      Powered by <a href="https://datasette.io/">Datasette</a>
+      {% if query_ms %}· {{ query_ms|round(3) }}ms{% endif %}
+    </p>
   </div>
-  <div class="bs-site-footer__meta">
-    Powered by <a href="https://datasette.io/">Datasette</a>
-    {% if query_ms %}· Queries took {{ query_ms|round(3) }}ms{% endif %}
-    {% if metadata %}
-      {% if metadata.license or metadata.license_url %}· Data license:
-        {% if metadata.license_url %}
-          <a href="{{ metadata.license_url }}">{{ metadata.license or metadata.license_url }}</a>
-        {% else %}
-          {{ metadata.license }}
-        {% endif %}
-      {% endif %}
-      {% if metadata.source or metadata.source_url %}·
-        Data source: {% if metadata.source_url %}<a href="{{ metadata.source_url }}">{% endif %}{{ metadata.source or metadata.source_url }}{% if metadata.source_url %}</a>{% endif %}
-      {% endif %}
-      {% if metadata.about or metadata.about_url %}·
-        About: {% if metadata.about_url %}<a href="{{ metadata.about_url }}">{% endif %}{{ metadata.about or metadata.about_url }}{% if metadata.about_url %}</a>{% endif %}
-      {% endif %}
-    {% endif %}
-  </div>
-</footer>
+</div>

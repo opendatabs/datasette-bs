@@ -4,10 +4,44 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/bs/datatools.css">
 {{ super() }}
 {% endblock %}
 
+{% block crumbs %}{% endblock %}
+
 {% block nav %}
-{% include "includes/_site_header.html" %}
-{{ super() }}
+<header class="bs-site-header" role="banner">
+  <div class="bs-site-header__inner">
+    {% include "includes/_site_header.html" %}
+    <div class="bs-site-header__right">
+      {% set links = menu_links() %}
+      <details class="nav-menu details-menu">
+        <summary aria-label="Menü">
+          <svg aria-hidden="true" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+            <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+          </svg>
+        </summary>
+        <div class="nav-menu-inner">
+          <ul>
+            <li><button type="button" class="button-as-link" data-navigation-search-open aria-haspopup="dialog" aria-expanded="false" aria-keyshortcuts="/">Jump to... <kbd class="keyboard-shortcut" aria-hidden="true" title="Keyboard shortcut: press / to open Jump to">/</kbd></button></li>
+            {% for link in links %}
+            <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+            {% endfor %}
+          </ul>
+          {% if show_logout %}
+          <form class="nav-menu-logout" action="{{ urls.logout() }}" method="post">
+            <button class="button-as-link">Log out</button>
+          </form>
+          {% endif %}
+        </div>
+      </details>
+      {% if actor %}
+      <div class="actor">
+        <strong>{{ display_actor(actor) }}</strong>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</header>
 {% endblock %}

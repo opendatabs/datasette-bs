@@ -1,12 +1,76 @@
 {% extends "default:index.html" %}
 
-{% block description_source_license %}
-<div class="bs-intro">
-  <p>
-    {{ metadata.description or "Interaktive Datenauswertungen des Kantons Basel-Stadt." }}
-    Weitere offene Datensätze finden Sie auf
-    <a href="https://data.bs.ch">data.bs.ch</a>.
+{% block extra_head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block title %}Erweiterter Datenportal Kanton Basel-Stadt{% endblock %}
+
+{% block content %}
+<div class="bs-hero">
+  <h1 class="bs-page-title">Erweiterter Datenportal Kanton Basel-Stadt</h1>
+  <p class="bs-page-description">
+    Datensätze, die für das öffentliche Datenportal <a href="https://data.bs.ch">data.bs.ch</a> zu umfangreich sind, werden hier bereitgestellt. 
+    In <a href="https://data.bs.ch">data.bs.ch</a> findet man weiterhin die aktuellsten Daten und alle Metadaten zu den Datensätzen.
   </p>
 </div>
-{{ super() }}
+
+{% set action_links, action_title = homepage_actions, "Homepage actions" %}
+{% include "_action_menu.html" %}
+
+{{ top_homepage() }}
+
+{% block description_source_license %}{% endblock %}
+
+{% for database in databases %}
+<article class="bs-database-card">
+  <a class="bs-database-card__overlay" href="{{ urls.database(database.name) }}" aria-label="{{ database.name }}"></a>
+  <h2 class="bs-database-heading">
+    <a class="bs-database-heading__link" href="{{ urls.database(database.name) }}">
+      <svg class="bs-inline-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M0 0h24v24H0z" fill="none" />
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <ellipse cx="12" cy="5" rx="9" ry="3" />
+          <path d="M3 5v14a9 3 0 0 0 18 0V5" />
+          <path d="M3 12a9 3 0 0 0 18 0" />
+        </g>
+      </svg>
+      <span>{{ database.name }}</span>
+    </a>{% if database.private %} 🔒{% endif %}
+  </h2>
+  <p class="bs-database-meta">
+      {% if database.show_table_row_counts %}{{ "{:,}".format(database.table_rows_sum) }} rows in {% endif %}{{ database.tables_count }} table{% if database.tables_count != 1 %}s{% endif %}{% if database.hidden_tables_count %}, {% endif -%}
+      {% if database.hidden_tables_count -%}
+          {% if database.show_table_row_counts %}{{ "{:,}".format(database.hidden_table_rows_sum) }} rows in {% endif %}{{ database.hidden_tables_count }} hidden table{% if database.hidden_tables_count != 1 %}s{% endif -%}
+      {% endif -%}
+      {% if database.views_count -%}
+          {% if database.tables_count or database.hidden_tables_count %}, {% endif -%}
+          {{ "{:,}".format(database.views_count) }} view{% if database.views_count != 1 %}s{% endif %}
+      {% endif %}
+  </p>
+  <ul class="bs-table-links">
+    {% for table in database.tables_and_views_truncated %}
+    <li>
+      <a class="bs-table-link" href="{{ urls.table(database.name, table.name) }}"{% if table.count %} title="{{ table.count }} rows"{% endif %}>
+        <svg class="bs-inline-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M12 3v18" />
+            <rect width="18" height="18" x="3" y="3" rx="2" />
+            <path d="M3 9h18M3 15h18" />
+          </g>
+        </svg>
+        <span>{{ table.name }}</span>
+      </a>{% if table.private %} 🔒{% endif %}
+    </li>
+    {% endfor %}
+    {% if database.tables_and_views_more %}
+    <li><a class="bs-table-link bs-table-link--more" href="{{ urls.database(database.name) }}">...</a></li>
+    {% endif %}
+  </ul>
+</article>
+{% endfor %}
+
 {% endblock %}
