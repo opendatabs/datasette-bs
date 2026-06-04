@@ -1,6 +1,8 @@
 <!-- above-table-panel is a hook node for plugins to attach to . Displays even if no data available -->
 <div class="above-table-panel"> </div>
 {% if display_columns %}
+{# datasette-geojson-map inserts #map as first child of .table-wrapper — do not remove #}
+<div class="table-wrapper">
 <figure class="overflow-auto">
     <table class="has-mobile-style is-wide table rows-and-columns">
         <thead>
@@ -35,6 +37,7 @@
     <figcaption>{{ table }}</figcaption>
     {% endif %}
 </figure>
+</div>
 {% endif %}
 {% if not display_rows %}
     <p class="zero-results">0 records</p>
