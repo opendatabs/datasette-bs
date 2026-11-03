@@ -1,28 +1,16 @@
 {% extends "default:index.html" %}
 
-{% block extra_head %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-{% endblock %}
-
-{% block title %}Erweitertes Datenportal Kanton Basel-Stadt{% endblock %}
+{% block title %}Datenportal Basel-Stadt - Download für umfangreiche Datensätze{% endblock %}
 
 {% block content %}
 <div class="bs-hero">
-  <h1 class="bs-page-title">Erweitertes Datenportal Kanton Basel-Stadt</h1>
+  <h1 class="bs-page-title">Datenportal Basel-Stadt - Download für umfangreiche Datensätze</h1>
   <p class="bs-page-description">
-    Datensätze, die für das öffentliche Datenportal <a href="https://data.bs.ch">data.bs.ch</a> zu umfangreich sind, werden hier bereitgestellt. 
-    Auf <a href="https://data.bs.ch">data.bs.ch</a> findet man weiterhin die aktuellsten Daten und alle Metadaten zu den Datensätzen.
+    Diese Webseite ergänzt das kantonale Datenportal <a href="https://data.bs.ch">data.bs.ch</a>.
+    Hier finden Sie ausschliesslich besonders umfangreiche Datensätze, die nicht direkt auf dem Datenportal veröffentlicht werden können.
+    Das Datenportal <a href="https://data.bs.ch">data.bs.ch</a> bleibt die zentrale Plattform für die Open Government Data des Kantons Basel-Stadt.
   </p>
 </div>
-
-{% set action_links, action_title = homepage_actions, "Homepage actions" %}
-{% include "_action_menu.html" %}
-
-{{ top_homepage() }}
-
-{% block description_source_license %}{% endblock %}
 
 {% for database in databases %}
 <article class="bs-database-card">

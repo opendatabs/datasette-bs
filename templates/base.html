@@ -1,16 +1,29 @@
-{% extends "default:base.html" %}
-
-{% block extra_head %}
+{% import "default:_crumbs.html" as crumbs with context %}<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %} | Kanton Basel-Stadt</title>
+    <link rel="icon" href="/bs/favicon.png" type="image/png">
+    <link rel="stylesheet" href="{{ urls.static('app.css') }}?{{ app_css_hash }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% for url in extra_css_urls %}
+    <link rel="stylesheet" href="{{ url.url }}"{% if url.sri %} integrity="{{ url.sri }}" crossorigin="anonymous"{% endif %}>
+{% endfor %}
+{% for url in extra_js_urls %}
+    <script {% if url.module %}type="module" {% endif %}src="{{ url.url }}"{% if url.sri %} integrity="{{ url.sri }}" crossorigin="anonymous"{% endif %}></script>
+{% endfor %}
+{%- if alternate_url_json -%}
+    <link rel="alternate" type="application/json+datasette" href="{{ alternate_url_json }}">
+{%- endif -%}
+{%- block extra_head %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/bs/datatools.css">
-{{ super() }}
-{% endblock %}
-
-{% block crumbs %}{% endblock %}
-
-{% block nav %}
+{% endblock -%}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<div class="not-footer">
+<header><nav>{% block nav %}
 <header class="bs-site-header" role="banner">
   <div class="bs-site-header__inner">
     {% include "includes/_site_header.html" %}
@@ -44,4 +57,29 @@
     </div>
   </div>
 </header>
+{% endblock %}</nav></header>
+
+{% block messages %}
+{% if show_messages %}
+    {% for message, message_type in show_messages() %}
+        <p class="message-{% if message_type == 1 %}info{% elif message_type == 2 %}warning{% elif message_type == 3 %}error{% endif %}">{{ message }}</p>
+    {% endfor %}
+{% endif %}
 {% endblock %}
+
+<section class="content">
+{% block content %}
+{% endblock %}
+</section>
+</div>
+<footer class="ft">{% block footer %}{% include "_footer.html" %}{% endblock %}</footer>
+
+{% include "default:_close_open_menus.html" %}
+
+{% for body_script in body_scripts %}
+    <script{% if body_script.module %} type="module"{% endif %}>{{ body_script.script }}</script>
+{% endfor %}
+
+{% if select_templates %}<!-- Templates considered: {{ select_templates|join(", ") }} -->{% endif %}
+</body>
+</html>

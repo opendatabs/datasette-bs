@@ -1,7 +1,8 @@
-title: Erweitertes Datenportal Kanton Basel-Stadt
+title: Datenportal Basel-Stadt - Download für umfangreiche Datensätze
 description: >
-  Datensätze, die für das öffentliche Datenportal data.bs.ch zu umfangreich sind, werden hier bereitgestellt. 
-  Auf https://data.bs.ch findet man weiterhin eine Vorschau der aktuellsten Daten und alle Metadaten zu den Datensätzen.
+  Diese Webseite ergänzt das kantonale Datenportal data.bs.ch.
+  Hier finden Sie ausschliesslich besonders umfangreiche Datensätze, die nicht direkt auf dem Datenportal veröffentlicht werden können.
+  Das Datenportal data.bs.ch bleibt die zentrale Plattform für die Open Government Data des Kantons Basel-Stadt.
 extra_css_urls:
   - /bs/datatools.css
 plugins:

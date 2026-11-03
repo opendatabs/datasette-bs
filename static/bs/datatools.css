@@ -12,7 +12,7 @@
   --bs-blue-600: #0e81a7;
   --bs-blue-900: #1e4557;
   --bs-green-600: #32834a;
-  --bs-gray-200-bg: #ebebeb;
+  --bs-gray-200-bg: #e3e3e3;
   --bs-max-width: 1210px;
   --bs-gutter: 15px;
 }
@@ -173,7 +173,7 @@ h1.bs-page-title,
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.45;
-  color: var(--bs-gray-700);
+  color: #333333;
   hyphens: auto;
 }
 
@@ -322,14 +322,23 @@ body.index .metadata-description {
   font-weight: 700;
 }
 
-/* Tables (Kanton Basel-Stadt style) */
+/* Tables (Kanton Basel-Stadt style)
+   Scroll on .table-wrapper (not the tall figure) so the horizontal
+   scrollbar stays in view instead of at the bottom of ~100 rows. */
+.table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  max-height: min(70vh, 40rem);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 figure.overflow-auto {
-  width: calc(100vw - (2 * var(--bs-gutter)));
+  width: max-content;
+  min-width: 100%;
   max-width: none;
-  margin-left: calc(50% - 50vw + var(--bs-gutter));
-  margin-right: 0;
-  overflow-x: auto;
-  overflow-y: visible;
+  margin: 0;
+  overflow: visible;
 }
 
 table.table {
@@ -347,16 +356,30 @@ table.table td {
   vertical-align: top;
   word-break: normal;
   overflow-wrap: anywhere;
+  white-space: nowrap;
+}
+
+table.table,
+table.table th,
+table.table td {
+  border-left: none !important;
+  border-right: none !important;
 }
 
 table.table thead {
-  border-bottom: 1.5px solid var(--bs-gray-900);
+  border-bottom: none;
 }
 
 table.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding-bottom: 5px;
   color: var(--bs-green-600);
   font-weight: 700;
+  background: #fff;
+  border-top: none !important;
+  border-bottom: 2px solid var(--bs-gray-900) !important;
 }
 
 table.table thead th a,
@@ -386,7 +409,8 @@ table.table th {
 }
 
 table.table td {
-  border-bottom: 1px solid #bababa;
+  border-top: none !important;
+  border-bottom: 1px solid var(--bs-gray-200) !important;
 }
 
 table.table caption,
@@ -401,6 +425,109 @@ figure.overflow-auto > figcaption {
 table.table a {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* Buttons — BS.ch Design System (standard / strong)
+   Format SQL = outline, Run SQL / Apply / Export = strong.
+   Selectors must beat Datasette's `form input[type=submit]` / `form button[type=button]`. */
+button:not(.button-as-link),
+form button:not(.button-as-link),
+form button[type="button"],
+input[type="submit"],
+input[type="button"],
+form input[type="submit"],
+form input[type="button"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--bs-blue-900) !important;
+  border-radius: 20px !important;
+  background: var(--bs-gray-20) !important;
+  background-image: none !important;
+  color: var(--bs-blue-900) !important;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: none !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+button:not(.button-as-link):hover,
+button:not(.button-as-link):focus,
+form button:not(.button-as-link):hover,
+form button:not(.button-as-link):focus,
+form button[type="button"]:hover,
+form button[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+form input[type="submit"]:hover,
+form input[type="submit"]:focus,
+form input[type="button"]:hover,
+form input[type="button"]:focus {
+  background: #fff !important;
+  color: var(--bs-blue-900) !important;
+  text-decoration: underline;
+}
+
+input[type="submit"],
+form input[type="submit"],
+button.btn-primary,
+.filter-widget input[type="submit"] {
+  background: var(--bs-blue-900) !important;
+  color: #fff !important;
+  border-color: var(--bs-blue-900) !important;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+form input[type="submit"]:hover,
+form input[type="submit"]:focus,
+button.btn-primary:hover,
+button.btn-primary:focus,
+.filter-widget input[type="submit"]:hover,
+.filter-widget input[type="submit"]:focus {
+  background: var(--bs-blue-600) !important;
+  border-color: var(--bs-blue-600) !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+/* Checkboxes — BS.ch Design System */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 0.4rem 0 0;
+  padding: 0;
+  vertical-align: middle;
+  flex-shrink: 0;
+  border: 1px solid var(--bs-blue-900);
+  border-radius: 0;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.75rem auto;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--bs-blue-900);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 9'%3E%3Cpath fill='%23fff' d='M11.707.293a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L4 6.586 10.293.293a1 1 0 0 1 1.414 0'/%3E%3C/svg%3E");
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--bs-blue-600);
+  outline-offset: 2px;
 }
 
 /* Footer — PageFooter pattern (Storybook / designsystem) */
@@ -477,14 +604,14 @@ footer.ft p {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 1rem;
-  background: #fff;
-  border: 1px solid var(--bs-gray-900);
-  border-radius: 9999px;
+  padding: 0.48rem 0.625rem;
+  background: var(--bs-gray-20);
+  border: 1px solid var(--bs-blue-900);
+  border-radius: 15px;
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.25;
-  color: var(--bs-gray-900) !important;
+  line-height: 1;
+  color: var(--bs-blue-900) !important;
   text-decoration: none;
 }
 
@@ -502,8 +629,9 @@ footer.ft p {
 
 .bs-footer-pills a.bs-button--pill:hover,
 .bs-footer-pills a.bs-button--pill:focus {
-  color: var(--bs-gray-900) !important;
+  color: var(--bs-blue-900) !important;
   text-decoration: underline;
+  background: #fff;
 }
 
 .bs-footer-meta-nav {
@@ -513,11 +641,12 @@ footer.ft p {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .bs-footer-meta-nav a {
   font-size: 0.875rem;
+  font-weight: 700;
   color: var(--bs-blue-900) !important;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -618,6 +747,26 @@ body.table section.content .page-header > h1::before {
     font-size: 2rem;
   }
 
+  /* Full stacked table on mobile — no clipped scroll viewport */
+  .table-wrapper {
+    max-height: none;
+    overflow: visible;
+    width: 100%;
+  }
+
+  figure.overflow-auto {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  table.has-mobile-style,
+  table.table.has-mobile-style {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+
   table.has-mobile-style thead {
     display: none;
   }
@@ -627,27 +776,47 @@ body.table section.content .page-header > h1::before {
   table.has-mobile-style td,
   table.has-mobile-style th {
     display: block;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   table.has-mobile-style tbody tr {
-    border-top: 1px solid var(--bs-gray-200);
-    padding: 0.5rem 0;
+    border-top: 2px solid var(--bs-gray-900);
+    padding: 0.75rem 0;
+  }
+
+  table.has-mobile-style tbody tr:first-child {
+    border-top: none;
   }
 
   table.has-mobile-style td,
   table.has-mobile-style th {
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 0;
+    padding: 0.5rem 0 !important;
+    border-bottom: 1px solid var(--bs-gray-200) !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
+  table.has-mobile-style td:last-child,
+  table.has-mobile-style th:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Override Datasette's `.rows-and-columns td::before { margin-left: -10% }`
+     which clips labels outside the viewport on mobile. */
+  table.has-mobile-style.rows-and-columns td::before,
   table.has-mobile-style td[data-head-label]::before {
     content: attr(data-head-label);
     display: block;
-    margin-bottom: 10px;
+    margin: 0 0 0.25rem 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    max-width: 100%;
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--bs-green-600);
+    white-space: normal;
   }
 }
