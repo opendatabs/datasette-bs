@@ -323,13 +323,14 @@ body.index .metadata-description {
 }
 
 /* Tables (Kanton Basel-Stadt style)
-   Scroll on .table-wrapper (not the tall figure) so the horizontal
-   scrollbar stays in view instead of at the bottom of ~100 rows. */
+   Horizontal scroll only — all paginated rows are visible, no inner
+   vertical scrollbar. */
 .table-wrapper {
   width: 100%;
   max-width: 100%;
-  max-height: min(70vh, 40rem);
-  overflow: auto;
+  max-height: none;
+  overflow-x: auto;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -749,7 +750,6 @@ body.table section.content .page-header > h1::before {
 
   /* Full stacked table on mobile — no clipped scroll viewport */
   .table-wrapper {
-    max-height: none;
     overflow: visible;
     width: 100%;
   }
