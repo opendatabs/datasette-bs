@@ -1,23 +1,26 @@
-# Datasette on Docker
+# Datasette Basel-Stadt
 
-## Start
+Source for the Datasette instance (plugins, templates, static assets, `data/metadata.yml`).
+A GitHub Actions workflow ([.github/workflows/docker.yml](.github/workflows/docker.yml)) builds the image and pushes it to
+`ghcr.io/opendatabs/datasette-bs` (`latest` on the default branch, plus `sha-…` and tag versions).
 
-```bash
-docker network create webnet   # once
-docker compose run --rm datasette-inspect   # after adding or changing .db files in data/
-docker compose up -d --build
-```
+The image contains everything except the data: put `*.db` files and the generated `counts.json` in `/mnt/data`.
+Running the container (docker compose, CI) lives in the internal GitLab deploy project.
 
-Put SQLite files in `data/`. For GitHub auth: `cp .env.example .env` and fill in the values.
+Python dependencies are managed with [uv](https://docs.astral.sh/uv/) (`pyproject.toml` + `uv.lock`).
 
-Datasette listens on port **8001** on the `webnet` network—point your reverse proxy at `datasette:8001`.
-
-## Upgrade Datasette
-
-Change the version in `Dockerfile`, then:
+## Local development
 
 ```bash
-docker compose down
-docker compose build
-docker compose up -d
+uv sync
+cp .env.example .env   # GitHub auth values
+uv run datasette inspect data/*.db --inspect-file=data/counts.json --load-extension=spatialite
+uv run datasette serve -i data/*.db --inspect-file=data/counts.json --metadata data/metadata.yml \
+  --template-dir=templates --plugins-dir=plugins --static bs:static/bs --load-extension=spatialite
 ```
+
+SpatiaLite must be installed locally (`brew install spatialite-tools`).
+
+## Dependencies
+
+Add or upgrade a plugin with `uv add <package>==<version>` (or `uv lock --upgrade-package <package>`), commit `pyproject.toml` and `uv.lock`, and merge to `main`; the workflow publishes a new image. Renovate opens PRs for version bumps.

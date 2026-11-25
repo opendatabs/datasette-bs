@@ -1,8 +1,0 @@
-datasette-geojson-map==0.5.0
-datasette-vega==0.7
-datasette-marimo==0.2.2
-datasette-copyable==0.3.3
-datasette-render-images==0.4
-datasette-render-html==1.0
-datasette-render-markdown==2.2.1
-datasette-auth-github==1.0
