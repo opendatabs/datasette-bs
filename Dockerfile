@@ -21,4 +21,4 @@ COPY data/metadata.yml /app/metadata.yml
 
 EXPOSE 8001
 
-CMD ["/bin/sh", "-c", "datasette serve -i /mnt/data/*.db --inspect-file=/mnt/data/counts.json --metadata /app/metadata.yml --host 0.0.0.0 --port 8001 --setting max_returned_rows 10000 --setting default_page_size 20 --setting sql_time_limit_ms 50000 --setting facet_time_limit_ms 50000 --setting max_csv_mb 0 --setting force_https_urls 1 --load-extension=spatialite --template-dir=/app/templates --plugins-dir=/app/plugins --static bs:/app/static/bs"]
+CMD ["/bin/sh", "-c", "datasette serve -i /mnt/data/*.db --inspect-file=/mnt/data/counts.json --metadata /app/metadata.yml --host 0.0.0.0 --port 8001 --setting max_returned_rows 1000 --setting default_page_size 20 --setting sql_time_limit_ms 5000 --setting facet_time_limit_ms 1000 --setting suggest_facets off --setting max_csv_mb 0--setting force_https_urls 1 --load-extension=spatialite --template-dir=/app/templates --plugins-dir=/app/plugins --static bs:/app/static/bs"]

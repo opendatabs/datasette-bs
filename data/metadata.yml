@@ -6,6 +6,8 @@ description: >
 extra_css_urls:
   - /bs/datatools.css
 plugins:
+  request_guard:
+    max_facets: 3
   datasette-geojson-map:
     tile_layer: https://wmts.geo.bs.ch/wmts/1.0.0/BaseMap_grau/default/3857/{z}/{y}/{x}.png
     tile_layer_options:
